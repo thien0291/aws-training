@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern Data Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --navy: #232F3E;
+      --blue: #0073BB;
+      --orange: #FF9900;
+      --teal: #1BA0A2;
+      --ink: #1a2230;
+      --muted: #64748b;
+      --line: #e6e9ee;
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --radius: 16px;
+      --shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.06);
+      --shadow-hover: 0 6px 16px rgba(16,24,40,.10), 0 18px 40px rgba(16,24,40,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: radial-gradient(1200px 400px at 80% -20%, rgba(255,153,0,.28), transparent 60%),
+                  linear-gradient(135deg, var(--navy) 0%, #1c3a55 55%, var(--blue) 100%);
+      color: #fff;
+      padding: clamp(2rem, 5vw, 3.25rem) 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 auto; max-width: 900px;
+      font-size: clamp(1.4rem, 3.2vw, 2.1rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;
+    }
+    header h1 span { color: var(--orange); }
+    header p { margin: 0.75rem auto 0; max-width: 680px; opacity: 0.85; font-size: clamp(0.9rem, 1.6vw, 1.02rem); font-weight: 300; }
+
+    main { max-width: 1120px; margin: 0 auto; padding: 1.75rem 1.5rem; }
+    .scenario {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--orange);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      font-size: 0.92rem; line-height: 1.55;
+      color: #40506a;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+    .scenario strong { color: var(--ink); }
+
+    .section-label {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--muted); margin: 1.75rem 0 .9rem;
+    }
+    .section-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.35rem 1.25rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      overflow: hidden;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    /* accent strip on top, colored per card kind */
+    .card::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+      background: var(--accent, var(--blue));
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: #d7dde6; }
+
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+    .kicker {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--accent, var(--blue));
+    }
+    .badge {
+      font-size: .68rem; font-weight: 700; color: var(--muted);
+      background: #f1f4f8; border: 1px solid var(--line);
+      padding: .2rem .55rem; border-radius: 999px; white-space: nowrap;
+    }
+    .icon {
+      width: 34px; height: 34px; flex: none; border-radius: 10px;
+      display: grid; place-items: center; font-size: .95rem; color: #fff;
+      background: var(--accent, var(--blue));
+    }
+    .card h3 { margin: .1rem 0 0; font-size: 1.08rem; font-weight: 650; letter-spacing: -.01em; line-height: 1.3; }
+    .card p.desc { margin: 0; font-size: 0.88rem; line-height: 1.55; color: #52627a; flex: 1; }
+    .card .actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: .35rem; }
+
+    .btn {
+      text-decoration: none; font-weight: 600; font-size: 0.85rem;
+      padding: 0.55rem 0.95rem; border-radius: 10px;
+      display: inline-flex; align-items: center; gap: .4rem;
+      transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-primary {
+      background: var(--accent, var(--blue)); color: #fff;
+      box-shadow: 0 1px 2px rgba(16,24,40,.15);
+    }
+    .btn-primary:hover { filter: brightness(1.06); transform: translateX(2px); }
+
+    /* per-kind accents */
+    .card.module  { --accent: var(--blue); }
+    .card.demo    { --accent: var(--teal); }
+    .card.workshop{ --accent: var(--orange); }
+
+    footer {
+      max-width: 1120px; margin: 0 auto; padding: 1rem 1.5rem 2.5rem;
+      font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+    }
+    footer kbd {
+      font-family: inherit; font-size: .74rem; font-weight: 600;
+      background: #eef1f5; border: 1px solid var(--line); border-bottom-width: 2px;
+      border-radius: 5px; padding: .1rem .4rem; color: var(--ink);
+    }
+
+    @media (max-width: 520px) {
+      .grid { grid-template-columns: 1fr; }
+      main { padding: 1.25rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Building a Modern Data Platform for <span>Banking &amp; Financial Services</span> on AWS</h1>
+    <p>A hands-on tour of a modern data lakehouse for banking on AWS</p>
+  </header>
+  <main>
+    <div class="scenario">
+      <strong>Scenario — NovaBanco:</strong> a mid-size retail bank building its enterprise data platform from
+      foundational data-lake architecture, to a governed lakehouse, to real-world BFSI use cases.
+    </div>
+
+    <div class="section-label"><i class="fa-solid fa-chalkboard-user"></i> Course modules</div>
+    <div class="grid" id="grid-modules"></div>
+
+    <div class="section-label"><i class="fa-solid fa-laptop-code"></i> Hands-on demos</div>
+    <div class="grid" id="grid-demos"></div>
+
+    <div class="section-label"><i class="fa-solid fa-flask"></i> Workshop</div>
+    <div class="grid" id="grid-workshops"></div>
+  </main>
+  <footer>
+    Present a module: click <strong>Present slides</strong>. In the viewer, press
+    <kbd>S</kbd> for speaker notes, <kbd>F</kbd> for fullscreen, and the <kbd>←</kbd> <kbd>→</kbd> arrow keys to navigate.
+  </footer>
+
+  <script>
+    const modules = [
+      {
+        n: 1,
+        title: "Modern Data Architecture Foundations",
+        desc: "Evolution from warehouse to lakehouse to mesh, core architecture patterns, data movement, and the AWS services landscape.",
+        meta: "Data lake fundamentals, silos, lakehouse intro",
+      },
+      {
+        n: 2,
+        title: "The Open Data Platform — SageMaker Catalog & Lakehouse",
+        desc: "The core: open standards (Apache Iceberg), SageMaker Lakehouse architecture, storage options, Zero-ETL, unified catalog, governance, and query engines.",
+        meta: "Amazon SageMaker Lakehouse deep dive",
+      },
+      {
+        n: 3,
+        title: "Data Lake Use Cases for BFSI",
+        desc: "Fraud detection, regulatory compliance and lineage, Customer 360, and real-world financial-services reference architectures.",
+        meta: "Banking, capital markets, insurance, payments",
+      },
+      {
+        n: 4,
+        title: "Wrap-Up, Patterns & Next Steps",
+        desc: "Architecture decision framework, the emerging Data Mesh + Agentic AI pattern, and how to get started.",
+        meta: "Summary & resources",
+      },
+      {
+        n: 5,
+        label: "Appendix",
+        title: "Redshift & RMS Deep Dive",
+        desc: "Appendix: Redshift Managed Storage, bring-your-own-Redshift federated catalogs, creating RMS datasets, and querying Redshift data from any engine.",
+        meta: "",
+      },
+    ];
+    const demos = [
+      {
+        module: 1,
+        title: "Phase 1 — Foundations",
+        desc: "Walk through the NovaBanco data-lake foundations: S3 raw/curated zones, Glue crawlers & catalog, Lake Formation column-level security, Glue ETL to Apache Iceberg, and Kinesis streaming — with the architecture and SQL to follow along.",
+        meta: "Pairs with Module 1",
+        doc: "phase1",
+      },
+      {
+        module: 2,
+        title: "Phase 2 — The Open Data Platform",
+        desc: "Unify the S3 lake and Redshift warehouse into one governed lakehouse: SageMaker Unified Studio, one query spanning lake + warehouse governed by a single Lake Formation layer (the warehouse as an LF-managed RMS catalog), Zero-ETL from DynamoDB, the SageMaker Catalog (glossary + data products), and Iceberg maintenance.",
+        meta: "Pairs with Module 2",
+        doc: "phase2",
+      },
+      {
+        module: 3,
+        title: "Phase 3 — BFSI Use Cases",
+        desc: "Turn the lakehouse into business value with three universal banking use cases: real-time fraud scoring (Kinesis → Lambda → a SageMaker XGBoost endpoint → SNS alerts), regulatory CTR reporting with Iceberg snapshot lineage, and a Glue-built Customer 360 table powering an Amazon QuickSight dashboard.",
+        meta: "Pairs with Module 3",
+        doc: "phase3",
+      },
+    ];
+    const workshops = [
+      {
+        title: "Accelerating Financial Analytics: Lakehouse, Amazon SageMaker Unified Studio & Amazon Quick",
+        desc: "Combine generative AI, Aurora-to-Redshift Zero-ETL, an Amazon S3 lakehouse, and conversational analytics with Amazon Quick to break down data silos — ask financial questions in plain English and get instant, visual answers, cutting time-to-insight from days to seconds.",
+        meta: "Hands-on workshop",
+        url: "https://catalog.us-east-1.prod.workshops.aws/join",
+      },
+    ];
+
+    const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+    const moduleCards = modules.map((m) => `
+      <article class="card module">
+        <div class="card-top">
+          <span class="kicker"><span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+            ${m.label ? esc(m.label) : `Module ${m.n}`}</span>
+          ${m.meta ? `<span class="badge">${esc(m.meta)}</span>` : ""}
+        </div>
+        <h3>${esc(m.title)}</h3>
+        <p class="desc">${esc(m.desc)}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="deck.html?m=${m.n}"><i class="fa-solid fa-play"></i> Present slides</a>
+        </div>
+      </article>
+    `).join("");
+
+    const demoCards = demos.map((d) => `
+      <article class="card demo">
+        <div class="card-top">
+          <span class="kicker"><span class="icon"><i class="fa-solid fa-flask-vial"></i></span>
+            Demo · Module ${d.module}</span>
+          ${d.meta ? `<span class="badge">${esc(d.meta)}</span>` : ""}
+        </div>
+        <h3>${esc(d.title)}</h3>
+        <p class="desc">${esc(d.desc)}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="doc.html?doc=${d.doc}"><i class="fa-solid fa-book-open"></i> Open demo guide</a>
+        </div>
+      </article>
+    `).join("");
+
+    const workshopCards = workshops.map((w) => `
+      <article class="card workshop">
+        <div class="card-top">
+          <span class="kicker"><span class="icon"><i class="fa-solid fa-flask"></i></span> Workshop</span>
+          ${w.meta ? `<span class="badge">${esc(w.meta)}</span>` : ""}
+        </div>
+        <h3>${esc(w.title)}</h3>
+        <p class="desc">${esc(w.desc)}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="${w.url}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open workshop</a>
+        </div>
+      </article>
+    `).join("");
+
+    document.getElementById("grid-modules").innerHTML = moduleCards;
+    document.getElementById("grid-demos").innerHTML = demoCards;
+    document.getElementById("grid-workshops").innerHTML = workshopCards;
+  </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hands-on Demo — Modern Data Platform for BFSI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Syntax highlighting for code blocks -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
+
+  <style>
+    :root {
+      --aws-navy: #232F3E;
+      --aws-blue: #0073BB;
+      --aws-orange: #FF9900;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      background: #f4f6f8;
+      color: #232F3E;
+    }
+
+    /* Top bar (matches deck.html) */
+    .deck-topbar {
+      position: sticky;
+      top: 0;
+      height: 44px;
+      background: linear-gradient(135deg, var(--aws-navy) 0%, var(--aws-blue) 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 40;
+      font-size: 14px;
+    }
+    .deck-topbar .title { font-weight: 600; }
+    .deck-topbar .title span { color: var(--aws-orange); }
+    .deck-topbar a {
+      text-decoration: none;
+      background: var(--aws-orange);
+      color: var(--aws-navy);
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 6px;
+    }
+    .deck-topbar a.secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+
+    /* Rendered markdown */
+    .md { background: #fff; border: 1px solid #e6e9ec; border-radius: 12px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.06); padding: 2rem 2.4rem; line-height: 1.6; }
+    .md h1 { font-size: 1.7rem; color: var(--aws-navy); border-bottom: 3px solid var(--aws-orange);
+             padding-bottom: 0.3rem; margin-top: 0; }
+    .md h2 { font-size: 1.3rem; color: var(--aws-navy); margin-top: 2rem;
+             border-bottom: 1px solid #e6e9ec; padding-bottom: 0.25rem; }
+    .md h3 { font-size: 1.08rem; color: var(--aws-blue); margin-top: 1.6rem; }
+    .md h4 { font-size: 0.98rem; color: var(--aws-navy); margin-top: 1.3rem; }
+    .md a { color: var(--aws-blue); }
+    .md p, .md li { font-size: 0.92rem; color: #33404d; }
+    .md hr { border: none; border-top: 1px solid #e6e9ec; margin: 1.6rem 0; }
+
+    /* Blockquotes / callouts */
+    .md blockquote {
+      margin: 1rem 0; padding: 0.7rem 1rem; background: #fff8ec;
+      border-left: 4px solid var(--aws-orange); border-radius: 6px;
+      color: #4a3d22; font-size: 0.9rem;
+    }
+    .md blockquote p { color: #4a3d22; margin: 0.35rem 0; }
+
+    /* Code */
+    .md code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; }
+    .md :not(pre) > code {
+      background: #eef2f6; color: #b83f2b; padding: 0.12em 0.4em; border-radius: 4px;
+    }
+    .md pre {
+      background: #f6f8fa; border: 1px solid #e2e8ee; border-radius: 8px;
+      padding: 0.9rem 1rem; overflow: auto; font-size: 0.82rem;
+    }
+    .md pre code { background: none; color: inherit; padding: 0; }
+
+    /* Tables */
+    .md table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+    .md th, .md td { border: 1px solid #dce3ea; padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+    .md th { background: #eef4fa; color: var(--aws-navy); }
+    .md td strong { color: var(--aws-blue); }
+
+    /* Mermaid diagram container */
+    .md .mermaid { background: #fff; text-align: center; margin: 1rem 0; }
+
+    /* Zoomable diagrams/images: hint that they open full screen on click. */
+    .md .mermaid, .md img { cursor: zoom-in; }
+    .md .mermaid svg, .md img { max-width: 100%; height: auto; }
+
+    /* Full-screen lightbox overlay */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 100;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(20, 26, 33, 0.92);
+      padding: 2rem; cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox .lb-content {
+      max-width: 96vw; max-height: 92vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    /* Images: fit the overlay while keeping aspect ratio. The SVG (mermaid)
+       is sized explicitly in JS from its viewBox, so it is not constrained
+       here (a width/height:auto rule can collapse a mermaid SVG). */
+    .lightbox .lb-content img {
+      width: auto; height: auto;
+      max-width: 96vw; max-height: 92vh;
+      background: #fff; border-radius: 8px; padding: 0.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox .lb-content svg {
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox .lb-close {
+      position: absolute; top: 18px; right: 22px;
+      background: rgba(255,255,255,0.15); color: #fff;
+      border: 1px solid rgba(255,255,255,0.4); border-radius: 8px;
+      font-size: 20px; line-height: 1; padding: 8px 12px; cursor: pointer;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+    .lightbox .lb-close:hover { background: rgba(255,255,255,0.28); }
+    .lightbox .lb-hint {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.7); font-size: 13px;
+    }
+
+    .loading, .error { padding: 2rem; text-align: center; color: #5b6b7b; }
+    .error { color: #b83f2b; }
+  </style>
+</head>
+<body>
+  <div class="deck-topbar">
+    <div class="title" id="docTitle">Hands-on Demo</div>
+    <div>
+      <a class="secondary" href="index.html">← All modules</a>
+    </div>
+  </div>
+
+  <main>
+    <div id="content" class="md"><div class="loading">Loading demo guide…</div></div>
+  </main>
+
+  <!-- Full-screen viewer for architecture diagrams / images -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Full-screen diagram">
+    <button type="button" class="lb-close" id="lbClose" title="Close (Esc)">✕</button>
+    <div class="lb-content" id="lbContent"></div>
+    <div class="lb-hint">Click anywhere or press Esc to close</div>
+  </div>
+
+  <!-- Libraries (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    // Known demo docs. Add phase2/phase3 here later if desired.
+    const DOCS = {
+      phase1: { file: "docs/phase1.md", title: 'Module 1 Demo <span>· Phase 1 — Foundations</span>' },
+      phase2: { file: "docs/phase2.md", title: 'Module 2 Demo <span>· Phase 2 — Open Data Platform</span>' },
+      phase3: { file: "docs/phase3.md", title: 'Module 3 Demo <span>· Phase 3 — BFSI Use Cases</span>' },
+    };
+
+    function getDocKey() {
+      const k = new URL(window.location.href).searchParams.get("doc") || "phase1";
+      return DOCS[k] ? k : "phase1";
+    }
+
+    async function render() {
+      const key = getDocKey();
+      const meta = DOCS[key];
+      document.getElementById("docTitle").innerHTML = meta.title;
+
+      let md;
+      try {
+        const res = await fetch(meta.file, { cache: "no-cache" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        md = await res.text();
+      } catch (e) {
+        document.getElementById("content").innerHTML =
+          `<div class="error">Could not load <code>${meta.file}</code> (${e.message}).<br>` +
+          `Serve this folder over HTTP and confirm the file exists.</div>`;
+        return;
+      }
+
+      // Configure marked. We intercept mermaid code fences so they render as
+      // diagrams rather than as highlighted code.
+      marked.setOptions({
+        gfm: true,
+        breaks: false,
+        highlight(code, lang) {
+          if (lang === "mermaid") return code; // handled below
+          try {
+            if (lang && window.hljs.getLanguage(lang)) {
+              return window.hljs.highlight(code, { language: lang }).value;
+            }
+            return window.hljs.highlightAuto(code).value;
+          } catch { return code; }
+        },
+      });
+
+      // Custom renderer: emit a <div class="mermaid"> for mermaid fences.
+      const renderer = new marked.Renderer();
+      const origCode = renderer.code.bind(renderer);
+      renderer.code = (code, infostring, escaped) => {
+        const lang = (infostring || "").trim().split(/\s+/)[0];
+        if (lang === "mermaid") {
+          const src = typeof code === "string" ? code : (code && code.text) || "";
+          return `<div class="mermaid">${src.replace(/</g, "&lt;")}</div>`;
+        }
+        return origCode(code, infostring, escaped);
+      };
+
+      const html = marked.parse(md, { renderer });
+      const container = document.getElementById("content");
+      container.innerHTML = html;
+
+      // Open external links in a new tab; keep in-repo .md links pointed at this viewer.
+      container.querySelectorAll("a[href]").forEach((a) => {
+        const href = a.getAttribute("href");
+        if (/^https?:\/\//i.test(href)) {
+          a.target = "_blank"; a.rel = "noopener";
+        } else if (/BFSI_Demo_Phase(\d)_/.test(href)) {
+          const n = href.match(/Phase(\d)/)[1];
+          if (DOCS[`phase${n}`]) a.setAttribute("href", `doc.html?doc=phase${n}`);
+        }
+      });
+
+      // Render mermaid diagrams.
+      try {
+        mermaid.initialize({ startOnLoad: false, theme: "default", securityLevel: "strict" });
+        await mermaid.run({ nodes: container.querySelectorAll(".mermaid") });
+      } catch (e) {
+        console.warn("mermaid render issue:", e);
+      }
+
+      // Make diagrams/images open full screen on click (after mermaid renders).
+      enableLightbox(container);
+    }
+
+    // ---- Full-screen lightbox for architecture diagrams and images ----
+    function enableLightbox(container) {
+      const lb = document.getElementById("lightbox");
+      const lbContent = document.getElementById("lbContent");
+
+      const open = (node) => {
+        lbContent.innerHTML = "";
+        // Find the SVG (mermaid) or fall back to an <img>.
+        const srcSvg = node.tagName.toLowerCase() === "svg" ? node : node.querySelector("svg");
+        if (srcSvg) {
+          const clone = srcSvg.cloneNode(true);
+          // Derive the aspect ratio from the viewBox so the SVG has real
+          // intrinsic dimensions to scale against; without this a mermaid SVG
+          // set to auto/100% can collapse to a tiny dot in a flex container.
+          let ratio = null;
+          const vb = (srcSvg.getAttribute("viewBox") || "").split(/[\s,]+/).map(Number);
+          if (vb.length === 4 && vb[2] > 0 && vb[3] > 0) ratio = vb[2] / vb[3];
+          else {
+            const r = srcSvg.getBoundingClientRect();
+            if (r.width > 0 && r.height > 0) ratio = r.width / r.height;
+          }
+          clone.removeAttribute("style");
+          clone.removeAttribute("width");
+          clone.removeAttribute("height");
+          clone.setAttribute("preserveAspectRatio", "xMidYMid meet");
+          // Size the SVG to the largest box that fits the viewport at its ratio.
+          if (ratio) {
+            const maxW = window.innerWidth * 0.94;
+            const maxH = window.innerHeight * 0.9;
+            let w = maxW, h = maxW / ratio;
+            if (h > maxH) { h = maxH; w = maxH * ratio; }
+            clone.style.width = w + "px";
+            clone.style.height = h + "px";
+          } else {
+            clone.style.width = "94vw";
+            clone.style.height = "90vh";
+          }
+          clone.style.background = "#fff";
+          clone.style.borderRadius = "8px";
+          clone.style.padding = "0.5rem";
+          lbContent.appendChild(clone);
+        } else if (node.tagName.toLowerCase() === "img") {
+          const clone = node.cloneNode(true);
+          clone.removeAttribute("style");
+          lbContent.appendChild(clone);
+        } else {
+          lbContent.appendChild(node.cloneNode(true));
+        }
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        lb.classList.remove("open");
+        lbContent.innerHTML = "";
+        document.body.style.overflow = "";
+      };
+
+      container.querySelectorAll(".mermaid, img").forEach((node) => {
+        node.addEventListener("click", () => open(node));
+      });
+
+      // Close on overlay click, the ✕ button, or Esc.
+      lb.addEventListener("click", close);
+      document.getElementById("lbClose").addEventListener("click", (e) => {
+        e.stopPropagation();
+        close();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lb.classList.contains("open")) close();
+      });
+    }
+
+    render();
+  </script>
+</body>
+</html>

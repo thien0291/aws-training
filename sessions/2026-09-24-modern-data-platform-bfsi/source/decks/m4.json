@@ -1,0 +1,73 @@
+[
+  {
+    "n": 1,
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Module 4 · Wrap-Up</div><h2>Patterns &amp; <em>next steps</em></h2>",
+    "image": "",
+    "student": "A short wrap-up: how to choose a pattern, what's next with agentic AI, and where to go from here.",
+    "instructor": "",
+    "time": "30 sec",
+    "audio": "decks/audio/m4/slide-1.mp3"
+  },
+  {
+    "n": 2,
+    "mode": "native",
+    "nativeClass": "",
+    "native": "<div class=\"kicker\">Decision framework</div><h2>Choosing an <em>architecture pattern</em></h2><table class=\"mini\"><tr><th>Requirement</th><th>Pattern</th><th>Key services</th></tr><tr><td>Single team, structured data</td><td><strong>Lakehouse</strong></td><td>S3 + Iceberg + Redshift + Athena</td></tr><tr><td>Many domains, decentralized ownership</td><td><strong>Data Mesh</strong></td><td>SageMaker Catalog + multi-account + Lake Formation</td></tr><tr><td>Event-driven, low latency</td><td><strong>Streaming</strong></td><td>MSK + Flink + Firehose + Redshift streaming</td></tr><tr><td>Minimal ops, variable load</td><td><strong>Serverless analytics</strong></td><td>Athena + Glue + S3 + QuickSight</td></tr><tr><td>Regulated (BFSI)</td><td><strong>Governed lakehouse + mesh</strong></td><td>Lake Formation + SageMaker Catalog + CloudTrail</td></tr></table>",
+    "image": "",
+    "student": "Match the pattern to the requirement. BFSI typically lands on a governed lakehouse, often with a mesh across domains.",
+    "instructor": "",
+    "time": "4 min",
+    "audio": "decks/audio/m4/slide-2.mp3"
+  },
+  {
+    "n": 3,
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/L300/slide-103.png",
+    "student": "Multi-warehouse architecture pattern. Keep one copy of data and use multiple data warehouses to query it, with no need to manage multiple datashares, scaling with workload isolation. This shows the lakehouse enabling separate compute for different teams over shared data.",
+    "instructor": "",
+    "audio": "decks/audio/m4/slide-3.mp3"
+  },
+  {
+    "n": 4,
+    "mode": "native",
+    "nativeClass": "",
+    "native": "<div class=\"kicker\">Emerging · 2026</div><h2>Data Mesh + <em>Agentic AI</em></h2><ul><li>Domain teams publish governed data products via SageMaker Catalog</li><li>AI agents (Amazon Bedrock) autonomously discover and access those products</li><li>Governance guardrails enforce access controls on agent queries</li><li>BFSI: AI advisors, automated compliance agents, Customer-360-aware service</li></ul>",
+    "image": "",
+    "student": "The next step: the same governed data products that serve analysts also safely serve autonomous AI agents.",
+    "instructor": "",
+    "time": "4 min",
+    "audio": "decks/audio/m4/slide-4.mp3"
+  },
+  {
+    "n": 5,
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/FSI/slide-036.png",
+    "student": "How to get started using AWS offerings and expertise. Options include immersion days, workshops, training, and certification (including free digital training, videos, and whitepapers); the Data-Driven Everything (D2E) program, which pairs you with AWS experts on high-velocity engagements for compelling use cases; AWS Professional Services and the AWS Partner Network to help build proofs of concept and productionize integrations; and the Data Journey Architect, a two-day collaborative workshop that assesses the current architecture, identifies gaps, and delivers a milestone-based data-journey roadmap.",
+    "instructor": "",
+    "audio": "decks/audio/m4/slide-5.mp3"
+  },
+  {
+    "n": 6,
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/FSI/slide-064.png",
+    "student": "Industry workshops available by segment. For Banking, a reference architecture of curated banking datasets covers customer segmentation, fraud detection, churn prediction, and generative-AI personalization. For Capital Markets, a workshop analyzes S&P 500 trade-and-quote data using SageMaker Lakehouse to unify data from disparate sources and query it with familiar SQL. For Insurance, a workshop uses SageMaker Unified Studio and analytics services to build data-driven, generative-AI insurance solutions. For Payments, a workshop uses SageMaker Unified Studio to ingest, store, process, and analyze payment data across big-data, streaming, BI, and ML needs.",
+    "instructor": "",
+    "audio": "decks/audio/m4/slide-6.mp3"
+  },
+  {
+    "n": 7,
+    "mode": "native",
+    "nativeClass": "title-slide",
+    "native": "<div class=\"kicker\">Thank you</div><h2>Build your <em>modern data platform</em></h2><p class=\"lead\">Start with a lakehouse foundation, add Zero-ETL and governance, then layer on BFSI use cases.</p><p class=\"lead\">Hands-on next step: Amazon SageMaker Workshop for Retail Banking &mdash; <a href=\"https://catalog.us-east-1.prod.workshops.aws/workshops/d907665b-30b5-4b48-9368-8c67642d67de/en-US\">catalog.us-east-1.prod.workshops.aws</a></p>",
+    "image": "",
+    "student": "Thank you. Recommended next step: the retail banking workshop covering Unified Studio, Lakehouse, Catalog, fraud detection, and GenAI.",
+    "instructor": "",
+    "time": "1 min",
+    "audio": "decks/audio/m4/slide-7.mp3"
+  }
+]

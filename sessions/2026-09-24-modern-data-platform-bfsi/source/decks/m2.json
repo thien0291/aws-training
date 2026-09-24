@@ -1,0 +1,477 @@
+[
+  {
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Module 2 · The Open Data Platform</div><h2>SageMaker Catalog &amp; <em>Lakehouse</em></h2><p class=\"lead\">Open standards, unified storage, Zero-ETL, one governed catalog, and your engine of choice.</p>",
+    "image": "",
+    "student": "This is the core module. We take NovaBanco's separate S3 data lake and Redshift warehouse and turn them into one open, governed platform built on Apache Iceberg. The story runs in seven parts: what an open platform means, why open matters, the lakehouse and its storage, bringing data in with Zero-ETL, the SageMaker Catalog for discovery and governance, the unified technical catalog with fine-grained access, and finally querying everything from the engine of your choice.",
+    "instructor": "",
+    "time": "1 min",
+    "n": 1,
+    "audio": "decks/audio/m2/slide-1.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-002.png",
+    "student": "Modern data and AI teams want three things from a platform, and these three ideas run through the whole module. First, an open data foundation: a single place to discover all structured and unstructured data, models, and AI assets, with an open lakehouse on Amazon S3 and Apache Iceberg so any engine can query it. Second, consistent governance: fine-grained access, quality checks, and lineage that behave the same way across every dataset and model, for people and for agents. Third, flexibility for developers and agents: purpose-built engines and AI-powered tools, with the freedom to bring your own IDE or build agents with Bedrock. For NovaBanco, this is the difference between five disconnected tools and one governed platform.",
+    "instructor": "",
+    "n": 2,
+    "audio": "decks/audio/m2/slide-2.mp3"
+  },
+  {
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Open by design</div><h2>Why <em>open</em></h2><p class=\"lead\">An open data foundation avoids lock-in and stays ready for AI.</p>",
+    "image": "",
+    "student": "Before the mechanics, it is worth being clear on why openness matters. An open data foundation keeps NovaBanco's data portable, reachable by many engines, and ready for whatever analytics or AI tool comes next.",
+    "instructor": "",
+    "time": "30 sec",
+    "n": 3,
+    "audio": "decks/audio/m2/slide-3.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-006.png",
+    "student": "An open data foundation rests on a few principles. Apache Iceberg is an open table format, so data is fully portable and never trapped in a proprietary store. Being open, it works with many engines, giving you real choice in how you compute. It acts as a common language that both people and AI agents understand, and a single open catalog can find all of your data. It also supports federation, so you can query data wherever it lives without moving it first. The result is portability, compatibility, and choice: you pick the best tool for each job, and new AI capabilities can work against the data you already have.",
+    "instructor": "",
+    "n": 4,
+    "audio": "decks/audio/m2/slide-4.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-007.png",
+    "student": "Apache Iceberg was not just adopted by AWS; it was designed to run well on it, built so analytics engines can work directly against petabyte-scale data lakes in Amazon S3. The adoption speaks for itself: more than one million data lakes run on AWS, about seventy-five percent of production Iceberg deployments run on AWS, and roughly seventy-seven percent of Iceberg users rely on the AWS Glue Data Catalog for their Iceberg metadata. AWS is also the fastest-growing contributor to the Iceberg project, with merged contributions up more than eighteen-fold. Choosing Iceberg on AWS means building on the platform where Iceberg is most at home.",
+    "instructor": "",
+    "n": 5,
+    "audio": "decks/audio/m2/slide-5.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-009.png",
+    "student": "With Iceberg as the foundation, you get multi-engine interoperability. The same data can be read by several AWS analytics engines, such as Amazon Athena, Amazon EMR, and Amazon Redshift, and by open-source and third-party engines like Apache Spark, Trino, and Snowflake. You match each workload to the most suitable engine without duplicating the data. AWS keeps the architecture open with broad native Iceberg support across storage, analytics, cataloging, governance, processing, and machine learning, while still letting you use your preferred third-party tools.",
+    "instructor": "",
+    "n": 6,
+    "audio": "decks/audio/m2/slide-6.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-010.png",
+    "student": "This is what a truly open lakehouse pulls together. At its heart it brings data lakes on Amazon S3 together with Amazon Redshift warehouses. It reaches outward with Zero-ETL integrations from operational databases and enterprise applications, with federated query connectors and hundreds of AWS Glue connectors for on-premises and third-party sources queried in place, and with fine-grained access control governing who sees what. For NovaBanco this means core banking, digital channels, and SaaS applications all reachable through one Iceberg-compatible interface.",
+    "instructor": "",
+    "n": 7,
+    "audio": "decks/audio/m2/slide-7.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-011.png",
+    "student": "Openness does not cost performance. AWS services for Iceberg consistently outperform open-source baselines and their own prior-year results. A few published figures: Amazon S3 Tables deliver up to ten times higher transactions per second than Iceberg in general-purpose S3 buckets; materialized views can accelerate data-lake queries from Spark up to eight times; Amazon EMR runs Spark and Iceberg up to four and a half times faster than open-source Spark; Amazon Redshift Serverless more than doubled Iceberg workload performance year over year; and Amazon Athena on Iceberg with Parquet is about one and a half times faster than a year earlier. Open and fast are not a trade-off here.",
+    "instructor": "",
+    "n": 8,
+    "audio": "decks/audio/m2/slide-8.mp3"
+  },
+  {
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Lakehouse</div><h2>One lakehouse, <em>flexible storage</em></h2><p class=\"lead\">A single copy of data, unified access, and the right storage for each workload.</p>",
+    "image": "",
+    "student": "With the why established, here is the lakehouse itself: one catalog over a single copy of data, and a choice of storage behind it so NovaBanco uses the right backing store for each workload.",
+    "instructor": "",
+    "time": "30 sec",
+    "n": 9,
+    "audio": "decks/audio/m2/slide-9.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-014.png",
+    "student": "Amazon SageMaker Lakehouse unifies all of your data for analytics and AI with a single copy, regardless of how or where it is stored. It brings together Amazon S3 data lakes and Amazon Redshift warehouses, lets you Zero-ETL operational and application data in near real time, and connects hundreds of sources through Glue connectors and federated query. You access it all in place through an open, Iceberg-compatible interface with your preferred SQL, Spark, BI, and AI/ML tools, and you secure it with consistent fine-grained access controls, defined once and enforced everywhere.",
+    "instructor": "",
+    "n": 10,
+    "audio": "decks/audio/m2/slide-10.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-052.png",
+    "student": "A simple way to hold the lakehouse in mind is two halves. On the left is the unified view: data management and one technical catalog over a single copy of data shared across the enterprise. On the right is unified access: Iceberg APIs to reach all of that data, with fine-grained access controls at the row, column, cell, and SQL-view level. Many kinds of source flow into the SageMaker Catalog in the middle, and many kinds of engine read out of it, all governed the same way.",
+    "instructor": "",
+    "n": 11,
+    "audio": "decks/audio/m2/slide-11.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-051.png",
+    "student": "Amazon S3 Tables are fully managed Apache Iceberg tables in S3. Storage is tuned for Iceberg so queries perform well out of the box, with security controls at the bucket and table level, and automated table maintenance turned on by default. That maintenance, which includes compaction, snapshot management, and removing unreferenced files, is the operational work teams normally do by hand with self-managed Iceberg. Because S3 Tables handle it, AWS reports up to three times faster queries and up to ten times higher transactions per second versus self-managed Iceberg in general-purpose buckets.",
+    "instructor": "",
+    "n": 12,
+    "audio": "decks/audio/m2/slide-12.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/L300/slide-028.png",
+    "student": "For a deeper look at general-purpose Amazon S3 as the data lake: you store data in S3 buckets and access it through the Apache Iceberg REST catalog APIs. You can enable automatic table optimization for Iceberg tables, meaning compaction, snapshot retention, and orphan-file deletion, get high performance from managed statistics, and reach the data seamlessly from both first-party and third-party engines.",
+    "instructor": "",
+    "n": 13,
+    "audio": "decks/audio/m2/slide-13.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/L300/slide-030.png",
+    "student": "This is what automatic table maintenance does under the covers. Compaction consolidates many small objects into fewer, larger ones to improve query performance, and snapshot retention removes snapshots that are no longer needed. Because the lakehouse performs this maintenance for you, Iceberg tables stay performant without manual operations, which is exactly the burden that sinks many self-managed Iceberg deployments.",
+    "instructor": "",
+    "n": 14,
+    "audio": "decks/audio/m2/slide-14.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-053.png",
+    "student": "Redshift Managed Storage, or RMS, is the third storage option and the one tuned for SQL analytics. Data lands in RMS and is served to many consumers: BI tools, data APIs, AWS analytics and ML services, generative-AI applications, and open-source engines, across both serverless and provisioned Redshift. Data arrives through streaming ingestion, Zero-ETL, and Amazon Data Exchange. It is ACID-compliant and SQL-optimized, so for NovaBanco it suits the transactional, frequently-updated datasets that a plain data lake handles less gracefully.",
+    "instructor": "",
+    "n": 15,
+    "audio": "decks/audio/m2/slide-15.mp3"
+  },
+  {
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Zero-ETL</div><h2>Bringing data in <em>without pipelines</em></h2><p class=\"lead\">NovaBanco replicates operational data into the lakehouse in near real time.</p>",
+    "image": "",
+    "student": "Now, how does data get in? Zero-ETL replaces hand-built ingestion pipelines with fully managed replication into the lakehouse, so NovaBanco's operational data arrives in near real time without pipelines to build or babysit.",
+    "instructor": "",
+    "time": "30 sec",
+    "n": 16,
+    "audio": "decks/audio/m2/slide-16.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-055.png",
+    "student": "It helps to name the problem Zero-ETL solves. Traditional ETL pipelines add a layer of complexity to every integration: you transform and clean data, replicate it, orchestrate workflows, and staff specialized ETL skills. That complexity carries three costs. It is complex, adding an extra moving part to maintain. It is high cost, because infrastructure, engineering, and tuning expenses grow with data volume. And it slows time to value, because custom code and maintenance stand between you and the insight. Zero-ETL exists to remove that layer.",
+    "instructor": "",
+    "n": 17,
+    "audio": "decks/audio/m2/slide-17.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-056.png",
+    "student": "Zero-ETL integrations from applications bring SaaS data into the lakehouse and Amazon Redshift without custom connectors. They replicate and ingest data from applications automatically, accelerate insight by unifying that data, remove the undifferentiated work of building connectors in-house or paying third-party services, and cut cost by eliminating pipeline management. For NovaBanco, this is how systems like a CRM or a service desk join the analytical picture without an engineering project each.",
+    "instructor": "",
+    "n": 18,
+    "audio": "decks/audio/m2/slide-18.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-061.png",
+    "student": "The supported application sources span the SaaS systems banks actually run: Salesforce, Zendesk, ServiceNow, SAP, Zoho CRM, Salesforce Pardot, and advertising platforms such as Instagram Ads and Facebook Ads, feeding both SageMaker Lakehouse and Amazon Redshift. The point is breadth: the more sources you can unify without pipelines, the more complete and current NovaBanco's view of its customers and operations becomes.",
+    "instructor": "",
+    "n": 19,
+    "audio": "decks/audio/m2/slide-19.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/ZE/slide-003.png",
+    "student": "Zero-ETL is a set of fully managed integrations that replicate data from an operational source — a database or an application — into AWS analytics services, with a no-code or low-code setup. In practice it moves and copies data without a separate transformation step, so it is closer to \"zero-EL\": there is no custom transformation stage for you to build or maintain.\n\nBecause the integrations are deeply built into AWS native analytics services such as Amazon Redshift, AWS Glue, Amazon S3, and S3 Tables, you do not need an external replication tool. Your data is automatically connected from source to destination, so you can analyze transactional data quickly, and because no pipeline development is required, you do not have to wait for one to be built before getting the insight you need. This is what eliminates months of work for data engineering teams and lets them focus on higher-value activities.\n\nThe performance is substantial. As the slide notes, the Aurora MySQL zero-ETL integration to Amazon Redshift processes over 1 million transactions per minute — the equivalent of about 17.5 million insert, update, and delete row operations per minute — from multiple Aurora databases, and makes them available in Amazon Redshift in less than 15 seconds (p50 latency lag). Setup is simple: you select the source and select the target, and you can consolidate data from multiple sources to run unified analytics or search across them.",
+    "instructor": "",
+    "n": 20,
+    "audio": "decks/audio/m2/slide-20.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/ZE/slide-005.png",
+    "student": "The sources supported by zero-ETL in the SageMaker Lakehouse architecture fall into two groups.\n\nThe first group is databases. This includes the NoSQL database Amazon DynamoDB, and the relational databases Aurora PostgreSQL, Aurora MySQL, and RDS for MySQL.\n\nThe second group is third-party applications, such as Salesforce, SAP, ServiceNow, Salesforce Marketing Cloud, Zendesk, Instagram Ads, Facebook Ads, and Zoho CRM.\n\nNote the scope: this covers the sources that integrate with the SageMaker Lakehouse architecture specifically. Zero-ETL supports some additional sources that do not yet integrate with the SageMaker Lakehouse architecture — for example, Oracle on RDS and Oracle Database@AWS.",
+    "instructor": "",
+    "n": 21,
+    "audio": "decks/audio/m2/slide-21.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/ZE/slide-007.png",
+    "student": "This table drills into how each source captures data, which explains the differences in freshness and granularity seen elsewhere in the session.\n\nData load frequency varies by source type. Relational sources replicate in near real time. DynamoDB has a 15–30 minute latency. Application sources are scheduled, with a configurable refresh interval between 15 minutes and 6 days.\n\nThe capture methods differ too. Relational sources use binary-log streaming or logical replication (Aurora PostgreSQL uses enhanced logical replication with optimized write-ahead-log storage). DynamoDB uses exports, specifically incremental exports, which is why it has the higher latency. Application sources use API polling.\n\nThese methods also determine change granularity. All individual changes (transactions) are captured for every source except DynamoDB. Because DynamoDB relies on incremental exports, it captures only the final state of each item within an export period, not the intermediate changes — a distinction worth remembering when the workload depends on seeing every change. Note also that RDS for MySQL is a supported source for SageMaker Lakehouse zero-ETL.",
+    "instructor": "",
+    "n": 22,
+    "audio": "decks/audio/m2/slide-22.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/ZE/slide-008.png",
+    "student": "Zero-ETL integrations have several notable features. Zero-ETL is a set of fully managed AWS integrations that minimize the need to build and operate ETL pipelines for common ingestion and replication use cases.\n\nThe key features include near-real-time replication of transactional and operational data into the SageMaker Lakehouse (or Amazon Redshift), no pipeline infrastructure to build or manage, automatic handling of schema changes and ongoing change data capture, and the ability to land data in your choice of storage — optimized Redshift Managed Storage or open Apache Iceberg tables in Amazon S3.",
+    "instructor": "",
+    "n": 23,
+    "audio": "decks/audio/m2/slide-23.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/ZE/slide-013.png",
+    "student": "Zero-ETL and query federation both provide access to source data for analytics, but they take fundamentally different approaches. Understanding the differences, and when to choose one over the other, is the focus of the comparison that follows.",
+    "instructor": "",
+    "n": 24,
+    "audio": "decks/audio/m2/slide-24.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/ZE/slide-014.png",
+    "student": "This table is a decision guide for choosing between zero-ETL integration and federated query.\n\nWith zero-ETL, source data is replicated into S3 or Redshift. It offers near-real-time freshness — seconds for relational sources, and 15 minutes or more for DynamoDB and application sources. Because the data has been copied, analytics run entirely on Redshift or Athena compute with no load on the source system, and performance is faster for complex queries and aggregations. This makes zero-ETL best for large datasets that are analyzed frequently, and for regular reporting, data warehousing, and historical data analysis.\n\nWith federation, the data remains in the source system and is queried in place. This gives real-time access to the current source data, but it uses the source database's compute, which can affect the source system, and performance may be slower for complex queries over large datasets. Federation is best suited to ad-hoc queries, data exploration, and smaller or occasionally queried datasets.\n\nIn short: choose zero-ETL for repeated, heavy analytics, and choose federation for lightweight, in-place access.",
+    "instructor": "",
+    "n": 25,
+    "audio": "decks/audio/m2/slide-25.mp3"
+  },
+  {
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Discover &amp; govern</div><h2>The <em>SageMaker Catalog</em></h2><p class=\"lead\">Discover, understand, and govern data and AI assets through one business catalog.</p>",
+    "image": "",
+    "student": "Getting data in is only half the job; people and agents still have to find it, understand it, trust it, and be granted access. That is the SageMaker Catalog, and it is where a raw collection of tables becomes a governed set of data products.",
+    "instructor": "",
+    "time": "30 sec",
+    "n": 26,
+    "audio": "decks/audio/m2/slide-26.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-069.png",
+    "student": "The SageMaker Catalog is an enterprise-wide business data catalog whose job is to let you discover, govern, and collaborate on data and AI securely, through one unified catalog. It brings together organizational domains that mirror how the business is structured, metadata curation, a business glossary that defines terms in plain language, and metadata forms that capture the context each dataset needs. Together these build a common language so teams across NovaBanco describe and find data the same way.",
+    "instructor": "",
+    "n": 27,
+    "audio": "decks/audio/m2/slide-27.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-074.png",
+    "student": "The aim is a business catalog anyone in the organization can understand. The work is to define and curate business metadata: glossary terms, definitions, and descriptive attributes that explain data in business language rather than technical schema. When data is described this way, an analyst can search for a concept they understand, such as \"active mortgage customer,\" and find the right dataset without knowing table or column names. This human-readable layer is the foundation for the discovery and sharing that follow.",
+    "instructor": "",
+    "n": 28,
+    "audio": "decks/audio/m2/slide-28.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-075.png",
+    "student": "Documenting thousands of datasets by hand does not scale, so the SageMaker Catalog can generate business metadata with generative AI, producing descriptions and business context that curators then review and approve. This does not replace human judgment; it gives curators a strong first draft so they can cover far more of the catalog than manual documentation ever would. For a bank with sprawling legacy data, this is often what makes a complete catalog realistic at all.",
+    "instructor": "",
+    "n": 29,
+    "audio": "decks/audio/m2/slide-29.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-077.png",
+    "student": "Discovery depends on publishing. Once a dataset is described and curated, its owner publishes it as a data product to the business catalog so other teams can find, understand, and request it. Publishing is a deliberate act by an owner, which means the catalog fills with data products someone is accountable for, rather than with raw, undocumented tables. This is the supply side of a publish-and-subscribe model; the demand side, requesting access, comes shortly.",
+    "instructor": "",
+    "n": 30,
+    "audio": "decks/audio/m2/slide-30.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-079.png",
+    "student": "Data lineage captures and visualizes how data flows through your systems, which matters for several jobs at once: understanding the provenance of data, impact analysis before a change, troubleshooting, and compliance such as GDPR. The lineage here is API-driven and OpenLineage-compliant, offers interactive visualization, and supports both asset-level and column-level lineage with versioning. In practice it answers two questions quickly, which for a regulated bank are essential: where did this data come from, and what breaks if I change it?",
+    "instructor": "",
+    "n": 31,
+    "audio": "decks/audio/m2/slide-31.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-080.png",
+    "student": "Trust in data is easier when quality is visible. The catalog surfaces data quality scores, backed by automated quality checks and profiling, so a consumer can see whether a dataset is reliable before building on it. Combined with rich business metadata, quality scores turn the catalog from an inventory into something people can actually trust, which is what makes self-service adoption stick.",
+    "instructor": "",
+    "n": 32,
+    "audio": "decks/audio/m2/slide-32.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-083.png",
+    "student": "Subscription workflows make it easy for the right users to reach the right data for the right purpose. A consumer submits a subscription request; the owner is notified, reviews it, and approves or rejects. Crucially the owner is not limited to all-or-nothing: they can approve the whole asset or apply row and column filters, for example excluding demographic columns, so governance is built into the request itself. For NovaBanco this is how an analyst gets exactly the customer data they need and nothing they should not see.",
+    "instructor": "",
+    "n": 33,
+    "audio": "decks/audio/m2/slide-33.mp3"
+  },
+  {
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Unified catalog</div><h2>One technical catalog, <em>one permission model</em></h2><p class=\"lead\">Managed and federated catalogs over the AWS Glue Data Catalog, governed by Lake Formation.</p>",
+    "image": "",
+    "student": "Under the business catalog sits the technical catalog, the AWS Glue Data Catalog extended to organize data from many storage systems, with AWS Lake Formation applying one permission model across all of it.",
+    "instructor": "",
+    "time": "30 sec",
+    "n": 34,
+    "audio": "decks/audio/m2/slide-34.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-091.png",
+    "student": "The unified technical catalog supports multiple catalog types so all of NovaBanco's lakehouse data lives under one structure. There are two kinds. A managed catalog is one where the lakehouse manages the metadata and the data sits in Amazon S3 or Redshift Managed Storage. A federated catalog is one where an external system, such as Redshift, S3 Tables, or a query-federation source, manages the metadata and the catalog links to it. Both surface through the same Glue Data Catalog, so they look consistent to users.",
+    "instructor": "",
+    "n": 35,
+    "audio": "decks/audio/m2/slide-35.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-093.png",
+    "student": "The managed catalog for Amazon S3 holds data-lake tables on S3. A key convenience is that your existing AWS Glue Data Catalog becomes the default catalog, identified by your account number, so there is no migration: existing Glue tables are immediately available in the lakehouse. New tables you create here are Iceberg by default and automatically get the lakehouse optimizations. For NovaBanco, the S3 data lake it already has simply shows up, ready to govern.",
+    "instructor": "",
+    "n": 36,
+    "audio": "decks/audio/m2/slide-36.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-094.png",
+    "student": "The managed catalog for Redshift Managed Storage is the RMS counterpart. Data is stored in RMS and exposed through the managed RMS catalog, and that storage is created when the catalog is created. You can create several managed RMS catalogs and write to their tables through Iceberg APIs, through Amazon Redshift, or via Zero-ETL ingestion. This is how SQL-optimized, ACID data becomes a first-class part of the same catalog as the S3 data lake.",
+    "instructor": "",
+    "n": 37,
+    "audio": "decks/audio/m2/slide-37.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-096.png",
+    "student": "Federated catalogs bring existing sources in without moving the data. The catalog holds table metadata for tables that live outside the lakehouse; because the metadata is federated in, no data movement is required. Creating one is a few-click process of connecting a supported source, such as Amazon Redshift or S3 table buckets, and each source gets its own dedicated federated catalog. This is how NovaBanco reaches data in place when copying it would be wasteful.",
+    "instructor": "",
+    "n": 38,
+    "audio": "decks/audio/m2/slide-38.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-097.png",
+    "student": "Bringing your own Redshift is the most common federation case. You publish a Redshift provisioned cluster or serverless namespace to the Glue Data Catalog; the namespace and its databases mount as separate catalogs, and its schemas and tables register as federated objects. The publish action requires an identity with both Lake Formation data-lake-admin permission and Redshift superuser permission, works within and across accounts, and supports a four-level hierarchy of namespace, database, schema, and table.",
+    "instructor": "",
+    "n": 39,
+    "audio": "decks/audio/m2/slide-39.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-099.png",
+    "student": "The catalog hierarchy is flexible and dynamic, matching the underlying storage. The lakehouse root maps to an AWS account and Region. A managed catalog can map to a Redshift database and a federated catalog to a Redshift namespace, with databases mapping to schemas and tables living in RMS or S3. A default managed catalog holds Iceberg and Hive tables in Amazon S3. The takeaway is one consistent catalog view that faithfully reflects however each source is organized.",
+    "instructor": "",
+    "n": 40,
+    "audio": "decks/audio/m2/slide-40.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-103.png",
+    "student": "Integrated access control secures all of this through AWS Lake Formation, across managed and federated catalogs alike. It supports fine-grained control, allowing or denying access at the table, column, and cell level, industry-standard controls for third-party engines, tag-based and role-based access, and zero-copy sharing within and across enterprises. The essential idea is one permission model, enforced no matter which engine reads the data, which is exactly what a bank's security and compliance teams require.",
+    "instructor": "",
+    "n": 41,
+    "audio": "decks/audio/m2/slide-41.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-107.png",
+    "student": "Fine-grained access has three grains. At the column level you include or exclude specific columns. At the row level you apply a filter, for example country equals US. At the cell level you combine column and row filters to control individual cells. Lake Formation enforces all three consistently across engines. For NovaBanco this is how a branch analyst sees only their region's rows, and only the non-sensitive columns, from the very same table.",
+    "instructor": "",
+    "n": 42,
+    "audio": "decks/audio/m2/slide-42.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-108.png",
+    "student": "Support does vary by table type and engine, and it is worth setting expectations honestly. For S3 tables, first-party engines and trusted third-party engines support both full-table access and fine-grained access control, while fine-grained access for untrusted third-party engines is on the roadmap. For RMS, first-party engines and Redshift support both. One caveat to remember: hybrid access mode is not yet supported. Use this to plan which engines enforce which controls today.",
+    "instructor": "",
+    "n": 43,
+    "audio": "decks/audio/m2/slide-43.mp3"
+  },
+  {
+    "mode": "native",
+    "nativeClass": "section-header",
+    "native": "<div class=\"kicker\">Open access</div><h2>Access from <em>any engine</em></h2><p class=\"lead\">Apache Iceberg REST APIs, so first-party and third-party engines read the same governed data.</p>",
+    "image": "",
+    "student": "The last section closes the loop: how consumers actually read the data. Everything is exposed through the open Apache Iceberg REST catalog, so NovaBanco is never tied to one engine.",
+    "instructor": "",
+    "time": "30 sec",
+    "n": 44,
+    "audio": "decks/audio/m2/slide-44.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-111.png",
+    "student": "Iceberg compatibility is the openness pillar made concrete. The lakehouse exposes unified technical metadata and access control across managed and federated catalogs through the Apache Iceberg REST catalog APIs, so SageMaker Unified Studio, AWS analytics services, and third-party applications can all reach the data. Importantly, this extends Iceberg compatibility beyond the data lake to Redshift and federated sources as well.",
+    "instructor": "",
+    "n": 45,
+    "audio": "decks/audio/m2/slide-45.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-113.png",
+    "student": "Getting started is deliberately low-friction, because the Iceberg APIs sit alongside your existing Glue Data Catalog APIs. No migration is required: you can use Iceberg APIs immediately on existing Iceberg tables, and both API sets work on the same tables in parallel with no loss of function. Think of the Iceberg APIs as an extension of the Glue APIs, adding interoperability with third-party and open-source engines. You keep using Glue APIs for Hive tables and Iceberg APIs for Iceberg tables.",
+    "instructor": "",
+    "n": 46,
+    "audio": "decks/audio/m2/slide-46.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-117.png",
+    "student": "The payoff is querying with the engine of your choice. Through open data access over the Iceberg REST catalog API, first-party and third-party engines and tools, AWS analytics services, SageMaker Unified Studio, and third-party applications all query the same governed lakehouse data. For NovaBanco, the SQL team, the Spark team, and the BI team all work over one copy, each with the tool they prefer, under the same permissions.",
+    "instructor": "",
+    "n": 47,
+    "audio": "decks/audio/m2/slide-47.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-128.png",
+    "student": "Federated query is the complement to Zero-ETL: sometimes you leave data where it is and query it in place. With Amazon Athena, source databases appear as a lakehouse federated catalog in the Glue Data Catalog. Athena gets scoped credentials and connection details vended by Lake Formation, reads from the federated source, spills large results to S3, and can query across managed and multiple federated catalogs in one statement. Example sources include Amazon DynamoDB, RDS for MySQL, and Snowflake.",
+    "instructor": "",
+    "n": 48,
+    "audio": "decks/audio/m2/slide-48.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/CAT/slide-129.png",
+    "student": "Here is the end-to-end federated query path. Athena calls get-tables on Glue, requests credentials from Lake Formation, which vends scoped credentials, uses them to fetch metadata and connection details, reads data from each source, and spills large intermediate results to S3 that it reads back directly. This is what lets a single query join across DynamoDB, RDS for MySQL, Snowflake, and Redshift, all under consistent governance and without a pipeline in sight.",
+    "instructor": "",
+    "n": 49,
+    "audio": "decks/audio/m2/slide-49.mp3"
+  },
+  {
+    "mode": "image",
+    "native": "",
+    "image": "decks/images/FSI/slide-044.png",
+    "student": "Partner reference for AI-powered BI with Snowflake and Amazon QuickSight. Data is loaded from Amazon S3 using Snowflake's native ingestion, and a semantic view simplifies the schema for business users. Snowflake Cortex Analyst enables self-serve natural-language analytics over the structured data. A QuickSight Dataset Generator, run from AWS CloudShell against the QuickSight API, creates QuickSight datasets from Snowflake DDL. The result lets BI teams use natural language to build charts, dashboards, calculated fields, data stories, and what-if scenarios.",
+    "instructor": "",
+    "n": 50,
+    "audio": "decks/audio/m2/slide-50.mp3"
+  },
+  {
+    "mode": "native",
+    "nativeClass": "",
+    "native": "<div class=\"kicker\">Module 2 · Summary</div><h2>The open data platform &mdash; <em>recap</em></h2><ul><li>Open by design: Apache Iceberg + REST catalog = engine-agnostic access, no lock-in</li><li>Flexible storage: general-purpose S3, S3 Tables, and Redshift Managed Storage under one lakehouse</li><li>Zero-ETL ingests operational and app data; federation queries data in place</li><li>SageMaker Catalog makes data discoverable, understandable, and trusted</li><li>One technical catalog, one Lake Formation permission model, any engine</li></ul>",
+    "image": "",
+    "student": "That is the open data platform end to end: open by design, flexible storage, Zero-ETL and federation to bring data together, the SageMaker Catalog to discover and govern it, and one permission model enforced across every engine. In Module 3 we put this platform to work, building NovaBanco's BFSI use cases on top of it.",
+    "instructor": "",
+    "time": "1 min",
+    "n": 51,
+    "audio": "decks/audio/m2/slide-51.mp3"
+  }
+]

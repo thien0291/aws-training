@@ -1,0 +1,376 @@
+# Module 1: Modern Data Architecture Foundations
+
+Original: https://sml-slides.aws.yikyakyuk.com/slides/deck.html?m=1
+
+## Slide 1
+
+Modern Data Platforms on AWS
+
+Building a Modern Data Platform for Banking & Financial Services
+
+A one-day journey from data-lake foundations to a governed lakehouse and real-world BFSI use cases.
+
+### Slide notes
+
+Welcome. Over this course we build NovaBanco's modern data platform step by step: foundations first, then a unified open lakehouse, then the BFSI use cases that create business value.
+
+[Narration MP3](../source/decks/audio/m1/slide-1.mp3)
+
+## Slide 2
+
+Module 1 · Agenda
+
+Foundations
+
+- Evolution: warehouse → lake → lakehouse → mesh
+
+- Core architecture patterns on AWS
+
+- Data movement patterns (inside-out, outside-in, perimeter)
+
+- The AWS services landscape
+
+- Why unify: data silos and their cost
+
+### Slide notes
+
+Module 1 establishes the vocabulary and patterns we build on all day.
+
+[Narration MP3](../source/decks/audio/m1/slide-2.mp3)
+
+## Slide 3
+
+Scenario
+
+Meet NovaBanco
+
+A retail bank with 5 million customers and a cloud-first mandate.
+
+- Transactional systems: core banking on Aurora PostgreSQL, digital channels on DynamoDB
+
+- Needs to unify customer data across channels
+
+- Regulators require data lineage and access controls
+
+- Fraud team needs near-real-time detection
+
+- Analysts want self-service analytics with governance
+
+### Slide notes
+
+NovaBanco is our running example. Each capability we introduce maps to one of these concrete needs.
+
+[Narration MP3](../source/decks/audio/m1/slide-3.mp3)
+
+## Slide 4
+
+![Slide 4](../source/decks/images/OV/slide-003.png)
+
+### Slide notes
+
+A data lake is a centralized repository that lets you store all of your data — structured and unstructured — at any scale. The emphasis is on "all" and "any scale": unlike a traditional database, you are not limited to neatly tabular records, and you are not constrained by the capacity of a single cluster.
+
+The defining characteristic of a data lake is that you store data as-is, in open file formats, without having to structure it first. This contrasts with the traditional warehouse approach, where a schema must be defined and the data transformed before it can be loaded. In a data lake, raw data is landed first and interpreted later. This is often called "schema-on-read": the schema is applied at query time by whichever engine reads the data, rather than being locked in at write time.
+
+Because the data sits in open formats in one place, many different analytics and processing frameworks — SQL query engines, big-data processing, and machine learning — can all read the same copy without each maintaining its own. On AWS, the storage layer for the data lake is almost always Amazon S3, which is what makes storing all your data at any scale both practical and cost-effective.
+
+[Narration MP3](../source/decks/audio/m1/slide-4.mp3)
+
+## Slide 5
+
+![Slide 5](../source/decks/images/OV/slide-005.png)
+
+### Slide notes
+
+Traditional analytics followed a well-established pattern, and understanding it makes the value of the data lake clearer by contrast.
+
+In that classic pattern, operational data from transactional systems is extracted, transformed, and loaded — the familiar ETL flow — into a data warehouse. The warehouse organizes that data into a well-defined schema optimized for fast SQL, and it feeds the business intelligence tools, reports, and dashboards that decision-makers rely on.
+
+This model works very well for structured, well-understood data, and warehouses remain an important part of a modern architecture. The point is not that warehouses are obsolete.
+
+Its limitation is that it requires the schema to be defined up front, before data can be loaded, and it assumes you already know the questions you want to ask. That becomes a bottleneck with the volume, velocity, and especially the variety of modern data — clickstreams, logs, sensor feeds, documents, and images. Much of that data does not fit neatly into a predefined schema, and forcing it to means either heavy transformation work or leaving valuable data unused. Closing that gap is exactly what the data lake is designed to do.
+
+[Narration MP3](../source/decks/audio/m1/slide-5.mp3)
+
+## Slide 6
+
+![Slide 6](../source/decks/images/OV/slide-006.png)
+
+### Slide notes
+
+A data lake extends the traditional approach rather than replacing it. Adopting a data lake does not mean removing your warehouse.
+
+Alongside the conventional structured sources that already feed the warehouse, organizations now generate enormous volumes of new data the old model was never designed for: web clickstreams, sensor and IoT telemetry, social data, and signals from connected devices. Much of this is semi-structured or unstructured, and it arrives quickly and in large volumes.
+
+Rather than forcing these new sources through warehouse-style ETL, you land them in low-cost central storage on Amazon S3. From there, the same data can feed two directions at once: into the existing data warehouse for the structured reporting people already depend on, and into new analytics and machine learning workloads that operate directly on the raw data in the lake.
+
+The data lake becomes the common foundation that sits underneath and alongside the warehouse, letting you keep what works while unlocking the data types and use cases the warehouse alone could not handle.
+
+[Narration MP3](../source/decks/audio/m1/slide-6.mp3)
+
+## Slide 7
+
+![Slide 7](../source/decks/images/OV/slide-004.png)
+
+### Slide notes
+
+Organizations adopt data lakes for four main reasons, shown on this slide.
+
+First, a data lake decouples storage from compute. In traditional systems, storage and processing are bound together in the same cluster, so growing data forces you to add compute you may not need, and vice versa. Separating them lets you scale storage cheaply and independently, and provision exactly the compute you need, when you need it.
+
+Second, a data lake enables advanced analytics across all of your data sources. Instead of insights being trapped in departmental silos, the data is brought together in one place, which is what makes cross-domain analysis and machine learning possible.
+
+Third, it reduces ETL complexity and operational overhead. Because data is stored in its raw form and transformed on demand, you avoid building and maintaining heavy up-front pipelines just to get data in the door; you transform only what you need, when you need it.
+
+Finally, a data lake provides future extensibility. Analytics and database technologies keep evolving, and when a better engine appears you can point it at the same data already sitting in Amazon S3 rather than re-architecting your storage. Your data outlives any single tool, which effectively future-proofs the architecture.
+
+[Narration MP3](../source/decks/audio/m1/slide-7.mp3)
+
+## Slide 8
+
+![Slide 8](../source/decks/images/OV/slide-010.png)
+
+### Slide notes
+
+The fourth benefit is schema-on-read, which is the direct answer to the question on the slide: "Is there a way I can apply multiple analytics and processing frameworks to the same data?" With a data lake, the answer is yes.
+
+Because data is stored in open formats without a schema imposed at write time, the schema is applied when the data is read. This means the same underlying files in Amazon S3 can be interpreted by many different engines — a SQL query service, a Spark job, a machine learning framework — each reading the copy it needs without transforming or duplicating the data.
+
+This flexibility is what delivers the practical advantages of a data lake: greater agility, faster time to insight, and faster, lower-cost experimentation, because teams do not have to wait for new pipelines before trying a new tool. It also provides broader access to data across the organization and more flexibility to deal with data that varies in structure and changes over time.
+
+In short, schema-on-read is the mechanism that makes "one copy of data, many engines" possible, and it directly addresses the challenges of variety and change that the earlier slides raised.
+
+[Narration MP3](../source/decks/audio/m1/slide-8.mp3)
+
+## Slide 9
+
+Topic A
+
+Why data lakes?
+
+### Slide notes
+
+Section divider introducing why organizations adopt data lakes.
+
+[Narration MP3](../source/decks/audio/m1/slide-9.mp3)
+
+## Slide 10
+
+![Slide 10](../source/decks/images/M01/slide-009.png)
+
+### Slide notes
+
+A data lake is, concisely, a centralized repository for large amounts of structured and unstructured data, available for direct analytics. You store data as-is, at any scale, and run many types of analytics — dashboards and visualizations, big-data processing, real-time analytics, and machine learning — to guide better decisions. A data lake built on Amazon S3 can store exabytes of relational and non-relational data, with AWS data-movement services such as AWS DMS and Amazon Kinesis bringing data in from on-premises systems and real-time sources.
+
+A data lake encompasses several functions across the data spectrum. Data movement lets you import any amount of data, in real time, from multiple sources in its original format, and move it easily to and from purpose-built analytics stores. Secure storage and cataloging store relational and non-relational data and, through crawling, cataloging, and indexing, let you understand and protect what is in the lake. Analytics lets data scientists, developers, and business analysts use their choice of open-source and commercial tools directly against the lake without moving data to a separate system. Machine learning uses the lake to build models that forecast outcomes and recommend actions.
+
+[Narration MP3](../source/decks/audio/m1/slide-10.mp3)
+
+## Slide 11
+
+![Slide 11](../source/decks/images/M01/slide-005.png)
+
+### Slide notes
+
+The benefits of data lakes include democratization of data access and analysis, maximum data value, consistent and scalable infrastructure, managed and serverless operation, real-time analytics, and faster, more efficient insights. In short, a data lake lets you analyze more data from more sources in less time.
+
+By harnessing more data from more sources, data lakes empower users to collaborate and analyze data in different ways, leading to better, faster decisions. Several examples show where this adds value. Improving customer interactions: a data lake can combine customer-relationship data with social-media analytics, marketing data such as purchase history, and support tickets to identify the most profitable customer cohort or understand the causes of churn. Improving R&D innovation: a data lake helps R&D teams test hypotheses, refine assumptions, and assess results — adjusting product designs, conducting genomic research, or anticipating customer response. Increasing operational efficiency: because IoT produces large volumes of real-time machine data, a data lake simplifies its storage and analysis, reducing operational costs and improving quality, with the scalability that comes from separating storage and compute.
+
+[Narration MP3](../source/decks/audio/m1/slide-11.mp3)
+
+## Slide 12
+
+![Slide 12](../source/decks/images/M01/slide-007.png)
+
+### Slide notes
+
+A data warehouse and a data lake differ across several characteristics, a frequently asked question worth addressing directly.
+
+A data warehouse is a database optimized to analyze relational data from transactional systems and line-of-business applications. Its structure and schema are defined up front (schema-on-write) to optimize fast SQL queries, and its data is cleaned, enriched, and transformed to act as a trusted single source of truth. It is used mainly by business analysts for batch reporting, BI, and visualization, with the fastest query results but higher-cost storage.
+
+A data lake, by contrast, is a centralized repository for structured, semi-structured, and unstructured data from sources such as IoT devices, websites, mobile apps, social media, and corporate applications. Its schema is applied at analysis time (schema-on-read), and its data may or may not be curated. It uses low-cost storage, serves data scientists, data developers, and business analysts, and supports machine learning, predictive analytics, and data discovery and profiling. An AWS data lake incurs only a storage charge for the data — no servers are needed to store and access it, and with Amazon Athena there is no additional charge for processing. The two are complementary: a data warehouse is one of several purpose-built stores that operate alongside a data lake in a modern data architecture.
+
+[Narration MP3](../source/decks/audio/m1/slide-12.mp3)
+
+## Slide 13
+
+![Slide 13](../source/decks/images/OV/slide-014.png)
+
+### Slide notes
+
+Amazon S3 is a natural fit for a data lake because its native features are exactly what a data lake needs.
+
+It is durable and available. S3 is designed for 11 nines (99.999999999%) of durability and 99.99% availability, replicating data across multiple Availability Zones so the lake stays intact and accessible. This level of resilience is very difficult to achieve with a fixed database cluster.
+
+It is high performance and scalable. S3 supports parallel and multipart uploads and range GET requests to retrieve subsets of objects, and it lets you store as much as you need with no minimum usage commitments. Crucially, storage scales independently of compute, and at a low storage cost, which is the property that underpins the decoupling of storage and compute discussed earlier.
+
+It is integrated and easy to use. S3 works directly with a broad range of AWS services — Amazon EMR, Amazon Redshift, Amazon DynamoDB, Amazon SageMaker, and many more — and exposes a simple REST API and AWS SDKs. Features such as read-after-write consistency, event notifications, and lifecycle policies make it straightforward to build automated, cost-managed data pipelines on top of it.
+
+Taken together, these characteristics are why S3 serves as the backbone of the data lake.
+
+[Narration MP3](../source/decks/audio/m1/slide-13.mp3)
+
+## Slide 14
+
+![Slide 14](../source/decks/images/L300/slide-006.png)
+
+### Slide notes
+
+Customers have realized value by being data driven, and more customers are embarking on their data journey
+
+Customers have identified Data as a key enabler and have started investing in Data Governance and management. In 2023
+- 82% of organizations reported having appointed Chief Data Officers (CDO)
+- 94% organizations have increased their investments in Data driven initiatives,
+
+Customers who have successfully transitioned to being Data Driven, have realized up to 20% revenue growth.
+
+However, even as more and more organizations are starting Data Driven initiatives, only 1 in 4 organizations have been able to complete their journey to becoming data driven.
+Why is that?
+
+Lets look at some of the challenges that are inhibiting this transition…
+
+[Narration MP3](../source/decks/audio/m1/slide-14.mp3)
+
+## Slide 15
+
+![Slide 15](../source/decks/images/L300/slide-009.png)
+
+### Slide notes
+
+Illustrates why unified data management is hard today. Data from many sources (cloud object storage, databases, logs, web, devices, social, sensors, SaaS) must be read into separate data lakes and data warehouses. Teams end up duplicating data, orchestrating and monitoring workflows, and maintaining ever more copies of analytics data. This copy-and-move sprawl is the core problem SageMaker Lakehouse aims to eliminate.
+
+[Narration MP3](../source/decks/audio/m1/slide-15.mp3)
+
+## Slide 16
+
+![Slide 16](../source/decks/images/L300/slide-010.png)
+
+### Slide notes
+
+Organizations are building data-driven applications to guide business decisions, improve agility, and drive innovation. Many of these applications are complex to build because they require collaboration across teams and the integration of data, tools, and services. For example, to build an app that supports targeted marketing campaigns, a consumer goods manufacturer’s data team has to work with multiple data sources, tools, and services. First, data engineers use data warehouses, data lakes, and analytics tools to load, transform, clean, and aggregate data. Next, data scientists use a ML studio and notebook environment to create models that recommend best offers to targeted segments. Finally, business analysts create dashboards to analyze and visualize campaign performance. Building advanced data-driven applications like this poses several challenges. First, it is time consuming for users to learn multiple services’ development experiences. Second, since data, code and other development artifacts (e.g. ML models) are stored in different services, it is cumbersome for users to understand how they interact with each other and to make changes. Third, configuring and governing access to appropriate users for data, code, development artifacts, and compute resources (e.g., clusters, serverless endpoints) across services is a manual process. Today, to address these challenges, organizations build bespoke integrations between services, tools, and homegrown access management systems. Organizations want the flexibility to adopt the best services for their use cases while empowering their data practitioners with a unified development experience.
+
+[Narration MP3](../source/decks/audio/m1/slide-16.mp3)
+
+## Slide 17
+
+![Slide 17](../source/decks/images/L300/slide-011.png)
+
+### Slide notes
+
+Explains the consequences of workload-specific stores creating data silos. Four issues: lack of interoperability (not all data is accessible from all query engines), inconsistent governance (policies and enforcement vary by where data is stored), complex architecture (multiple copies of data and governance for different workloads), and longer time to value when adding new analytic use cases.
+
+[Narration MP3](../source/decks/audio/m1/slide-17.mp3)
+
+## Slide 18
+
+![Slide 18](../source/decks/images/L300/slide-012.png)
+
+### Slide notes
+
+States the customer desire: the best of both data lakes and data warehouses. Customers want the choice of services and tools that data lakes enable plus the secure, consistent access that warehouses provide. The lakehouse is presented as the solution that combines both over a single copy of analytics data.
+
+[Narration MP3](../source/decks/audio/m1/slide-18.mp3)
+
+## Slide 19
+
+![Slide 19](../source/decks/images/L300/slide-013.png)
+
+### Slide notes
+
+Notes that existing lakehouse approaches force trade-offs. Data-lake-centric approaches lack intelligent storage optimization, struggle with high-concurrency interactive SQL, and give up decades of database capabilities like transactions. Data-warehouse-centric approaches lack open access to warehouse data, have limited engine interoperability with open table formats, and still create silos. SageMaker Lakehouse is positioned to avoid both sets of trade-offs.
+
+[Narration MP3](../source/decks/audio/m1/slide-19.mp3)
+
+## Slide 20
+
+![Slide 20](../source/decks/images/OV/slide-013.png)
+
+### Slide notes
+
+A robust data lake on AWS is best understood as an architecture map, and everything on that map organizes around one center point: Amazon S3.
+
+At the center, Amazon S3 is the storage layer of the data lake. Its properties are what make everything else possible: it is durable and highly available, it scales to exabytes, it offers fine-grained object-level access controls, and it lets you tier data across storage classes to manage cost. Every other service on the diagram reads from or writes to S3.
+
+Around the storage layer sit governance and cataloging. AWS Lake Formation and AWS Glue handle cataloging, ETL, and governance — Glue crawls and catalogs your data and runs transformations, while Lake Formation centralizes permissions. Together they turn a collection of files in S3 into an organized, secure, queryable lake.
+
+On the way in, ingestion services bring data to the lake: Amazon Kinesis Data Streams and Data Firehose handle streaming data, while the AWS Snow family handles large bulk or one-time transfers — Snowball for terabytes and Snowmobile for the largest migrations.
+
+On the way out, a set of analytics and ML engines read the same S3 data without copying it: Amazon Athena for serverless SQL, Amazon EMR for Spark and Hadoop, Amazon Redshift for warehousing, Amazon OpenSearch for search and log analytics, and the AI services Amazon SageMaker, Amazon Comprehend, and Amazon Rekognition.
+
+The design principle that ties it all together is one this material returns to repeatedly: compute is decoupled from storage, and resources are provisioned on demand. One copy of data in S3, many engines on top, each scaled independently.
+
+[Narration MP3](../source/decks/audio/m1/slide-20.mp3)
+
+## Slide 21
+
+![Slide 21](../source/decks/images/M01/slide-013.png)
+
+### Slide notes
+
+AWS provides services for every stage of building a data lake, mapped onto the analytics pipeline. The high-level message is breadth: there are many services available, and this course focuses on those most commonly used.
+
+Storage is anchored by Amazon S3, which can store exabytes of relational and non-relational data, so you no longer need to delete data because a database will not scale. To get data into the lake, AWS provides data-movement services: the AWS Snow Family for bulk transfer, AWS DMS to migrate databases into S3, Amazon Kinesis for IoT and real-time ingestion, Amazon AppFlow for SaaS applications, AWS Transfer Family for file transfer, and standard compute. Purpose-built tools then work directly on data in S3: Amazon Redshift as an exabyte-scale data warehouse, Amazon QuickSight for visualization, Amazon Athena for interactive queries, and Amazon EMR for Spark and Hadoop processing. Because you pay only for what you use — and serverless options charge only for processing time or storage consumed — the architecture scales automatically to meet demand.
+
+[Narration MP3](../source/decks/audio/m1/slide-21.mp3)
+
+## Slide 22
+
+![Slide 22](../source/decks/images/M01/slide-017.png)
+
+### Slide notes
+
+A scalable data lake is one component within a broader modern data architecture. The graphic presents "Modern Data Architecture on AWS" as an overarching concept connecting five foundational components: scalable data lakes, purpose-built analytics services, seamless data movement, unified governance, and performance and cost-effectiveness.
+
+The underlying idea is that a one-size-fits-all approach to analytics eventually forces compromises. A modern data architecture is not just about integrating a data lake with a data warehouse, but about integrating a data lake, a data warehouse, and purpose-built stores, with unified governance and easy data movement. On AWS, this lets organizations build scalable data lakes, use a broad set of purpose-built services, ensure compliance through unified access, security, and governance, scale at low cost without sacrificing performance, and share data across organizational boundaries. Mapping the earlier pipeline services to these components: scalable data lakes include Amazon S3 and AWS Lake Formation; purpose-built analytics services include Amazon Athena, Amazon EMR, Amazon OpenSearch Service, Amazon Kinesis, and Amazon Redshift; seamless data movement includes AWS Glue, AWS DMS, and Amazon Redshift Spectrum; unified governance includes AWS Lake Formation; and performance and cost-effectiveness include Amazon EC2 and Savings Plans. This course focuses on scalable data lakes and unified governance, and the topic is explored in much greater depth later in the course.
+
+[Narration MP3](../source/decks/audio/m1/slide-22.mp3)
+
+## Slide 23
+
+![Slide 23](../source/decks/images/L300/slide-014.png)
+
+### Slide notes
+
+Single copy of data including Structured, semi-structured, and unstructured data with a Unified Data Catalog
+
+
+Achieve unified access to all your data
+Amazon SageMaker Lakehouse unifies all your data across multiple sources for your analytics and AI initiatives with a single copy of data, regardless of how and where the data is stored. SageMaker Lakehouse brings together your existing data across Amazon S3 data lakes and Amazon Redshift data warehouses. In addition, you can zero-ETL data from operational databases and enterprise applications to the lakehouse in near real-time. You can also use hundreds of AWS Glue connectors to integrate across different data sources. Furthermore, you can access and query data in-place with federated query capabilities across third-party data sources.
+
+Use your preferred analytics and ML engines with an open, Iceberg-compatible interface
+Amazon SageMaker Lakehouse enables you to access and query all your data in-place with all Apache Iceberg compatible tools and engines. This provides you with the flexibility to use analytic tools and engines of your choice, such as your preferred SQL, Spark, BI, and AI/ML tools and collaborate with data stored across Amazon S3 data lakes or Amazon Redshift data warehouses. SageMaker Lakehouse works out-of-the-box with your existing data architecture, without being constrained by specific storage format or query engine choices.
+
+Secure your data with consistent fine-grained access controls
+Amazon SageMaker Lakehouse provides a single place for integrated, fine-grained access controls, that are consistently enforced across all your data in all analytic tools and engines. This enables you to define permissions once and securely share data across your organization.
+
+[Narration MP3](../source/decks/audio/m1/slide-23.mp3)
+
+## Slide 24
+
+![Slide 24](../source/decks/images/L300/slide-015.png)
+
+### Slide notes
+
+Summarizes how SageMaker Lakehouse fits into your existing architecture without change. It unifies data across Amazon Redshift data warehouses (Redshift Managed Storage) and Amazon S3 data lakes, provides open data access for AWS and third-party applications via the Apache Iceberg API, and integrates fine-grained permissions through AWS Lake Formation. The emphasis: no need to change your data architecture.
+
+[Narration MP3](../source/decks/audio/m1/slide-24.mp3)
+
+## Slide 25
+
+Module 1 · Summary
+
+Foundations — recap
+
+- Data platforms evolved from warehouses to lakes to the lakehouse
+
+- Four patterns: Lakehouse, Data Mesh, Serverless Analytics, Streaming
+
+- Workload-specific silos cost interoperability, governance, and time-to-value
+
+- The lakehouse unifies one copy of data for many engines — our foundation for Module 2
+
+### Slide notes
+
+Recap of Module 1. Next we go deep on the open data platform that solves the silo problem: Amazon SageMaker Lakehouse.
+
+[Narration MP3](../source/decks/audio/m1/slide-25.mp3)
