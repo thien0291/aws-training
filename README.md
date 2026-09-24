@@ -6,7 +6,7 @@ Private, session-based archive of AWS training materials for later review with A
 
 | Session | Material |
 | --- | --- |
-| [Modern Data Platform for Banking & Financial Services](sessions/2026-09-24-modern-data-platform-bfsi/README.md) | Five slide modules, three demo guides, slide images, narration, and workshop link |
+| [Modern Data Platform for Banking & Financial Services](sessions/2026-09-24-modern-data-platform-bfsi/README.md) | Five slide modules, three demo guides, slide images, narration, and [12 workshop lessons with 81 images](sessions/2026-09-24-modern-data-platform-bfsi/workshop/README.md) |
 
 The date in a directory name is the **archive date** unless its README says otherwise. It does not imply the training took place on that date.
 

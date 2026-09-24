@@ -1,0 +1,106 @@
+{
+  "contentGuideId": "7fb760fb-6d8e-4b7b-9b44-1e8c7f739f61",
+  "defaultLocaleCode": "en-US",
+  "version": 2,
+  "localeCodes": {
+    "en-US": {
+      "languageName": "English",
+      "weight": 1
+    }
+  },
+  "content": {
+    "en-US": {
+      "id": "c690220c-6d5d-4256-bf5e-c1b81771ab6a",
+      "path": "/",
+      "resource": "/content/index.en.md",
+      "title": "Accelerating Financial Analytics: Lakehouse, Amazon SageMaker Unified Studio \u0026 Amazon Quick",
+      "navigation": [
+        {
+          "id": "f639dac8-431b-42f8-a407-dd0a411a3316",
+          "path": "/00introduction",
+          "resource": "/content/00introduction/index.en.md",
+          "title": "00. Join Workshop Event",
+          "navigation": []
+        },
+        {
+          "id": "d4b654ae-f429-4307-b444-d6de63881908",
+          "path": "/01setup",
+          "resource": "/content/01setup/index.en.md",
+          "title": "01. User administration \u0026 set up",
+          "navigation": []
+        },
+        {
+          "id": "91ed0543-8ed6-4537-b97c-66bede928505",
+          "path": "/02createcatalog",
+          "resource": "/content/02createcatalog/index.en.md",
+          "title": "02. Create catalogs and connections",
+          "navigation": []
+        },
+        {
+          "id": "9009cd45-fb6d-4c1c-befb-460fc232b171",
+          "path": "/03createzeroetl",
+          "resource": "/content/03createzeroetl/index.en.md",
+          "title": "03. Create a zero-ETL integration",
+          "navigation": []
+        },
+        {
+          "id": "e3207ec4-f8d8-4b30-b842-523d230594f8",
+          "path": "/04datafederation",
+          "resource": "/content/04datafederation/index.en.md",
+          "title": "04. Federated Data Query",
+          "navigation": []
+        },
+        {
+          "id": "5176c47a-cfee-46c9-bf68-fa68bb8a89ab",
+          "path": "/05zetlvalidation",
+          "resource": "/content/05zetlvalidation/index.en.md",
+          "title": "05. Zero-ETL Query",
+          "navigation": []
+        },
+        {
+          "id": "8c249f76-8116-43b2-8733-ca2469258913",
+          "path": "/06nlpquicksuite",
+          "resource": "/content/06nlpquicksuite/index.en.md",
+          "title": "06. Natural Language Data Analysis with Amazon Quick",
+          "navigation": [
+            {
+              "id": "6a63fbee-13e6-4d66-b2ee-6649ccf1e81d",
+              "path": "/06nlpquicksuite/06-01-dashboard-q-a",
+              "resource": "/content/06nlpquicksuite/06-01-dashboard-q-a/index.md",
+              "title": "6.1. Perform Dashboard Q\u0026A in Quick Sight",
+              "navigation": []
+            },
+            {
+              "id": "f504611c-546e-4912-91cd-a37594664300",
+              "path": "/06nlpquicksuite/06-02-default-chat-agent",
+              "resource": "/content/06nlpquicksuite/06-02-default-chat-agent/index.md",
+              "title": "6.2. Create and use Quick Suite Spaces with default chat agent",
+              "navigation": []
+            },
+            {
+              "id": "298d76a7-f70d-4c38-b42d-b16fdcee1a13",
+              "path": "/06nlpquicksuite/06-03-personalized-chat-optional",
+              "resource": "/content/06nlpquicksuite/06-03-personalized-chat-optional/index.md",
+              "title": "6.3 Build a personalized Risk Assessment Chat agents (Optional)",
+              "navigation": []
+            }
+          ]
+        },
+        {
+          "id": "061e4e0a-fd19-4819-a2ba-d086bade0e05",
+          "path": "/06summary",
+          "resource": "/content/06summary/index.en.md",
+          "title": "Workshop Summary",
+          "navigation": []
+        }
+      ]
+    }
+  },
+  "params": {
+    "author": "Sandhya Khanderia",
+    "co-author": "Nita Shah",
+    "description": "Renewable Energy Data Lake Workshop - Unified Analytics with Zero-ETL \u0026 Federated Queries",
+    "emailContact": "sandhkh@amazon.com; nitaaws@amazon.com"
+  },
+  "additionalLinks": []
+}

@@ -19,7 +19,7 @@ Demo guides: [Phase 1 — Foundations](source/docs/phase1.md), [Phase 2 — Open
 
 The `source/` directory is a snapshot of the public site, including its HTML viewers, images, and narration MP3s. [source-manifest.json](source-manifest.json) records each source file's size and SHA-256. The Markdown slide files are derived from the original JSON for searching and AI review; use the original images and JSON for exact slide content.
 
-The linked hands-on workshop, **Accelerating Financial Analytics: Lakehouse, Amazon SageMaker Unified Studio & Amazon Quick**, opens at [AWS Workshop Studio](https://catalog.us-east-1.prod.workshops.aws/join). The site does not provide a workshop ID or downloadable lab files at that link, so they are not in this snapshot.
+The linked hands-on workshop, **Accelerating Financial Analytics: Lakehouse, Amazon SageMaker Unified Studio & Amazon Quick**, is archived in [workshop/](workshop/README.md). It includes 12 instruction pages, 81 images, three helper files, and the original Workshop Studio manifest. Its event dashboard and temporary credentials are not archived.
 
 To view the archived site locally, run `python3 -m http.server 8000 --directory sessions/2026-09-24-modern-data-platform-bfsi/source` from the repository root, then open `http://localhost:8000/`. The viewer loads public JavaScript/CSS libraries from external CDNs; the archived JSON, Markdown, images, audio, and demo guides remain readable without it.
 

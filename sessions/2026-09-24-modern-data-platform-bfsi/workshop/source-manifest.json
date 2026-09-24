@@ -1,0 +1,500 @@
+{
+  "captureDate": "2026-09-24",
+  "source": "AWS Workshop Studio",
+  "sourceUrl": "https://catalog.us-east-1.prod.workshops.aws/event/dashboard/en-US/workshop",
+  "sourceFileCount": 98,
+  "instructionPageCount": 12,
+  "imageCount": 81,
+  "files": [
+    {
+      "path": "source/content/00introduction/index.en.md",
+      "bytes": 958,
+      "sha256": "b65818fc8460ad79241786fff6491a7b579fcdd7b1943b6684a5b26c68d989f7"
+    },
+    {
+      "path": "source/content/01setup/index.en.md",
+      "bytes": 2458,
+      "sha256": "951041600b7e0de43c841b32bcefce05ef7844bd0d410fd9fcba0e0dcefb8213"
+    },
+    {
+      "path": "source/content/02createcatalog/index.en.md",
+      "bytes": 8377,
+      "sha256": "a25c8ab38d51f3cba7ea0706a52f670435cb502a1d3ca70159891d31321f213a"
+    },
+    {
+      "path": "source/content/03createzeroetl/index.en.md",
+      "bytes": 3743,
+      "sha256": "c9b5341f988c5165422f04a78c9c4b1f2d843894083b9034a51c95ab950706b9"
+    },
+    {
+      "path": "source/content/04datafederation/index.en.md",
+      "bytes": 23939,
+      "sha256": "7396b69a402c894713fd639e191eb1865093779b0f7599e94f22560f02fe50de"
+    },
+    {
+      "path": "source/content/05zetlvalidation/index.en.md",
+      "bytes": 11267,
+      "sha256": "861af98cf9a5c09619f2e78c1829f8a16734d7e368dc910ef73077e6328372c7"
+    },
+    {
+      "path": "source/content/06nlpquicksuite/06-01-dashboard-q-a/index.md",
+      "bytes": 1798,
+      "sha256": "52e5c78f3a371101614d7defb7b34b3ead4efcc1508ef1b2b53465547d259cc6"
+    },
+    {
+      "path": "source/content/06nlpquicksuite/06-02-default-chat-agent/index.md",
+      "bytes": 3564,
+      "sha256": "69ae9344fc6e2af59ffd03660d8c06545e378dc8660b01e292638171dd01d66f"
+    },
+    {
+      "path": "source/content/06nlpquicksuite/06-03-personalized-chat-optional/index.md",
+      "bytes": 3783,
+      "sha256": "df0fe4d2e234fa47e548b16c7c1a68ed3b36b5b4891b543be34767111f15f139"
+    },
+    {
+      "path": "source/content/06nlpquicksuite/index.en.md",
+      "bytes": 8889,
+      "sha256": "92f20650060dac4dad95206f5d6b66e8e3e2aba9032163a068a3668e6e5e3505"
+    },
+    {
+      "path": "source/content/06summary/index.en.md",
+      "bytes": 9364,
+      "sha256": "7491285a442a64c0bd14b5466b8404a6ed59cbce5b76ca1af344d9877d52d2f1"
+    },
+    {
+      "path": "source/content/index.en.md",
+      "bytes": 8690,
+      "sha256": "e097f211c97ab75217d7415d33b1ed626c6173b3a8fedcd191c07aa2e347bf3d"
+    },
+    {
+      "path": "source/manifest.json",
+      "bytes": 3912,
+      "sha256": "770cc1a41cddea4ed1b091f323f74162e500d5b8f672b33c04c9bdb9344ce234"
+    },
+    {
+      "path": "source/metadata.json",
+      "bytes": 556,
+      "sha256": "728fcbedbac1b6a2a3440affb6ac121ce6b0bbe11cb2823dcb887164d23a92aa"
+    },
+    {
+      "path": "source/static/LAB05_PERMISSIONS_QUICK_FIX.md",
+      "bytes": 1920,
+      "sha256": "7135d6904a4182ba64d33d03e2e5fc2377b3aaeaab61ae0026e5d88b45262a43"
+    },
+    {
+      "path": "source/static/fix_glue_permissions.md",
+      "bytes": 6868,
+      "sha256": "5b71aacfd3206f6e88bf7177f3bc2e90143a4bbb6529529cf01b4b3a0c245d97"
+    },
+    {
+      "path": "source/static/fix_glue_permissions_cli.sh",
+      "bytes": 2828,
+      "sha256": "f05aca754ee1eb183ec305bba4c069f7a43c0fd8fc2f3eff088e7410bd61de36"
+    },
+    {
+      "path": "source/static/images/00join/access-code.png",
+      "bytes": 57228,
+      "sha256": "4f947940bc145665e0e322847e43763c322c070ebc64eca38dd34ca9fced9cf6"
+    },
+    {
+      "path": "source/static/images/00join/pass-code.png",
+      "bytes": 54444,
+      "sha256": "78396d4b0d8a0c595e65b182373df6e5984212ccf54c25b870afdb727f3fb0ef"
+    },
+    {
+      "path": "source/static/images/00join/passcode.png",
+      "bytes": 41212,
+      "sha256": "81b157f8aae61b7e23f2b3f313751379b33a8bfceee69cf66f9c35a5dfaa92c8"
+    },
+    {
+      "path": "source/static/images/00join/signin.png",
+      "bytes": 62683,
+      "sha256": "7ebbb21c120cbcdb9a94907b4fc0e4af9b6c952c96777509bae439343e3cb508"
+    },
+    {
+      "path": "source/static/images/00join/term-condition.png",
+      "bytes": 296758,
+      "sha256": "2078d7859c31bc7812ff057b3559c44c5eac899c75b5954cae6b5147e3ecf171"
+    },
+    {
+      "path": "source/static/images/02studio/generatepwd.jpeg",
+      "bytes": 76845,
+      "sha256": "93124b76f3e75d7113ed7bcaeb1385d9ec065b8f58ec0e0758263cefbe33b26b"
+    },
+    {
+      "path": "source/static/images/02studio/resetpwd.jpeg",
+      "bytes": 94867,
+      "sha256": "a54bbe50361bc53e16ca846b6a5f47511042e0410e4629a62aea1157a4607bff"
+    },
+    {
+      "path": "source/static/images/02studio/savepwd.jpeg",
+      "bytes": 87979,
+      "sha256": "43c67559d1c0e7f12352658b66e943fbf4ddec5377300596c4740107d86745d9"
+    },
+    {
+      "path": "source/static/images/02studio/setpwd.jpeg",
+      "bytes": 41784,
+      "sha256": "53f12283b8be3b7256e4a3fa1e6288f916747bfebb05af8b092bf987dc5b4fb6"
+    },
+    {
+      "path": "source/static/images/Architecture.png",
+      "bytes": 1768125,
+      "sha256": "93fe37f14e935af233acf30a140d9b3401522d6d84c22f36799079a312b22abe"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-01-Add-Custom-SQL-RiskMetrics.png",
+      "bytes": 158000,
+      "sha256": "3b6e81b2b0f8cf44170fe23a847480831fe894d17b50ab58b652c1c790230c37"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-02-Select-Direct-Query.png",
+      "bytes": 85793,
+      "sha256": "6657f3cb05ae3d3fa81bfa6f184fde5c91e3230085e65bf01251c52e76fec4f7"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-04-Select-visual.png",
+      "bytes": 259571,
+      "sha256": "34ae416f73398eef674eee9024c4c96c7a2536abc927e19bf784f58308586cf3"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-05-Select-average-marketriskscore.png",
+      "bytes": 311681,
+      "sha256": "b49bf9ac690cb14e67213cd28f66a132ab9fa7a20a2c537457139c9ed0e247c2"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-06-Visual-created.png",
+      "bytes": 289013,
+      "sha256": "5cdfcaf9131bff6ff7114783d9d638dcb2d6b6230a25cc7f9f346ef40b06d96f"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-09-Select-create-topic.png",
+      "bytes": 81231,
+      "sha256": "0ce680b5bfd3a1a821969e5f9791095dacf5ac6919017319505fd449aee40d24"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-11-Name-topic.png",
+      "bytes": 89416,
+      "sha256": "dce3dd8839cda8173fa601f5c52eb1e3a54e964c56d328b93612bba9f92335c5"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-13-Publish-Dashboard.png",
+      "bytes": 186879,
+      "sha256": "19ba4f8a6c1a18bf8dfa3f85a25a4c1e42ef5f2762e91656b36ae0f2ee0fd1ef"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-14-View-dashboard.png",
+      "bytes": 230527,
+      "sha256": "79fa34f165c86a22d32cb249945879785011e228a3d731c1dec53d7b0387d762"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-15-Use-q-a.png",
+      "bytes": 324987,
+      "sha256": "d33baaa878e02ee2c4cec528ea370aa7dac27fef9b332bd395a79e817be2662e"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-16-Quick-Q-A-results.png",
+      "bytes": 422631,
+      "sha256": "ce81a44ff1804b9f7b234d3b9e6a142b716317d490c1a71dce44b815b0e16116"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-17-Create-space.png",
+      "bytes": 636822,
+      "sha256": "b79b51143fe7705dbe408cc6b013a0375d008268da40a4464f1135aea2e4f169"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-18-Name-space.png",
+      "bytes": 190574,
+      "sha256": "50238925a395889d594ac356d6a00507a68c7b42753a95060f67bb7d0da6bf16"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-19-Add-dashboard-to-space.png",
+      "bytes": 140159,
+      "sha256": "52d7ccfc1541ccde2f889747e100058b10a09877e5315546222e2d9e65e50ab8"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-20-Add-Topics-to-space.png",
+      "bytes": 134214,
+      "sha256": "3895cb68294b100312b50375a928a3484a19675ced56a3b4117f4ea49eb58c93"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-21-Space-view.png",
+      "bytes": 150349,
+      "sha256": "c019bdba55d35b945bf9fe6c2445aa776858777c4f21edcc568a3976c50c594d"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-22-Use-Space-in-chat.png",
+      "bytes": 248995,
+      "sha256": "d0f979572ebd6cda35c46095cb20625126248f3d7283277d198ccce3aa53e39e"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-23-Select-create-chat-agent.png",
+      "bytes": 924101,
+      "sha256": "584b340c434f39e94f45a6c7376c4df26825f72850821a4c3272b255372fe71d"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-24-Prompt-for-chat-agent-build.png",
+      "bytes": 614572,
+      "sha256": "bf9fa1a5c1143efcfe3f7d96098353ac1f128c44c2fd1a9a8df476ae60599ec0"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-25-Linked-space-to-chat.png",
+      "bytes": 569910,
+      "sha256": "ce8a2a5e0c0f1e192b5dd11a5a17fcb0484d63eb7f43185a39d104e6b3322be8"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-26-Risk-Assessment-Advisor.png",
+      "bytes": 121687,
+      "sha256": "4bc3d96fdbeee03db279df9a7f14213a7b6c2a21d4843abf3a7d61cb00f3b79a"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-27-Market_score_commerical_loan.png",
+      "bytes": 211031,
+      "sha256": "3b5d68e39f9da171dbcb709d11b0c5f999308b52e0aa681bb8d66d28eed342c8"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-28-Analyze_loan_exposure_chat.png",
+      "bytes": 295510,
+      "sha256": "5d8d1681dab5442aa93eeff9b04c36697e62d4d8b20f5c671654ea7072efde16"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-29-Use-chat-agent.png",
+      "bytes": 808457,
+      "sha256": "92f48e351382c5284d3c59bf17e33deca608f2422a467eb96bb44b411703fd1f"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-30-Default_chat.png",
+      "bytes": 448949,
+      "sha256": "ca54bcf9fd4cd17363200f3f86272977877de3204115589ca14a31418948759b"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick-31-Share-via-embed.png",
+      "bytes": 151195,
+      "sha256": "de39456f4746e20933a54acf7bc117584e20571b17248ef4d549be7f7f6d4f21"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick1.png",
+      "bytes": 284676,
+      "sha256": "a5b6b7872a044b7c9d42b8f51529d58123a60b42cf9a497b2439d3a42b9f5170"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick10.png",
+      "bytes": 207483,
+      "sha256": "42de70a692b8c2ef67d1d05f72769376b288b2be8aadde2664b9f252f8fa2061"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick2.png",
+      "bytes": 933071,
+      "sha256": "123f45e960b49d5452c09fe3458ff6c0d81f59ef5c75b5c19a90b45586e3446d"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick3.png",
+      "bytes": 202873,
+      "sha256": "7e905855b993294e677514bab2bfbf95a824d8b330a214416870ac9e49f57388"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick5.png",
+      "bytes": 111408,
+      "sha256": "37039894d2a04ee0acbc301dbddfa394908c3316d5a1814773bd2762f761c663"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick7.png",
+      "bytes": 350343,
+      "sha256": "df9d289394d870cd1ef6cfb6b8180fa2ac5e1ab0222f5cb7a200e15dcea6a047"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick8.png",
+      "bytes": 164458,
+      "sha256": "f9db030c6389f2c5d7980a4f9395d92ef2936ea40bd39ccb8241e4039fb6e589"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Lab6-Quick9.png",
+      "bytes": 147960,
+      "sha256": "da8a34144818a6de9a52de401f97b6ef254cb36b69a54322b8cea30d2a7e6ecc"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-10 at 7.37.38 PM.png",
+      "bytes": 332130,
+      "sha256": "5f880b0a2c706628081ed9ebaf58cb4e2868abc600353ca873d0cdaee2079abf"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-10 at 7.42.04 PM.png",
+      "bytes": 220061,
+      "sha256": "97b7a1307553bb87e64fbfea7f3ee4438ced329832a4dfc6a68862539c7105fe"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 1.00.51 PM.png",
+      "bytes": 457030,
+      "sha256": "017fc5adf68e1d769b22fb5495b86a9af864dc76d377a0d27ef8fb0f665501b9"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 1.18.16 PM.png",
+      "bytes": 242816,
+      "sha256": "f82c78b8153927879c82b63b30720cf1438cbc66681cf36e73ba7da6f72af8fd"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 1.18.44 PM.png",
+      "bytes": 256419,
+      "sha256": "2c99c3360cdaf84d742698b100d55ab80bb902a447c66e6fe9c68f40967c7827"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 1.23.54 PM.png",
+      "bytes": 192163,
+      "sha256": "4f89618b9a70d77517c81c234e61adc106d155481a600c808d3000bf53af63e5"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 1.46.13 PM.png",
+      "bytes": 220148,
+      "sha256": "bf0c187826a8665fb4decf1965453fb7ccfa0086d62f3b08810828c712d844f8"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 1.46.51 PM.png",
+      "bytes": 378943,
+      "sha256": "297cb2dd7aca359a4aa9c377d0852b5311fb7d9ad7f2e0e8a1fff2cc81c23354"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 1.48.19 PM.png",
+      "bytes": 93955,
+      "sha256": "aa34f28b58bf3e22f48d1c6d95ba6380c798450ee35bf83d7fb8428f043cbf14"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 12.18.36 PM.png",
+      "bytes": 293555,
+      "sha256": "416b0e56ea3ed1b4fe4014a474e7b2f8df1b00946c3e9b2f682861cfc7b3f603"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 12.19.05 PM.png",
+      "bytes": 424150,
+      "sha256": "9a9426c6ff06317a0e8c3c6f33ca5af81ede11f2e451acd1be72187c4736f47c"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 12.19.21 PM.png",
+      "bytes": 378266,
+      "sha256": "33eefaaa11a5b003bf719994b23352ad6a170d8ce0b216ca831010038a8888b2"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 12.21.16 PM.png",
+      "bytes": 488483,
+      "sha256": "ca4023e4c0cf2e9a45c275b66c21ca8858284ed8b067a478c07241aa6a325422"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 12.45.12 PM.png",
+      "bytes": 416203,
+      "sha256": "3d8260df4882c3f12a3e9819105f30127d1e5982c458f6dfd16376a6caf4b6f9"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 12.49.16 PM.png",
+      "bytes": 439022,
+      "sha256": "41b27d703218b3953dfdc960173e2856edaaa789bb6dfd647b19160313f56cf1"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 3.35.58 PM.png",
+      "bytes": 168224,
+      "sha256": "ee48e49f81f7805267ac0610e683b05982657784c47f6f03b759a6703f82e1cd"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 3.39.33 PM.png",
+      "bytes": 449154,
+      "sha256": "5cf6ed1166fae0f64fd00adc7abcfac7129341f5533b116d631fb0abbeb46a3d"
+    },
+    {
+      "path": "source/static/images/FSI-Images/Screenshot 2026-03-13 at 3.46.06 PM.png",
+      "bytes": 249269,
+      "sha256": "7b6b1f335cb20216a8b3d00ce24ad891508f0949e0369793f75f424be8c4a612"
+    },
+    {
+      "path": "source/static/images/Image44.png",
+      "bytes": 210755,
+      "sha256": "bb53ecff993d2c99e35af897ce8536f5121af711f90b90f0a054dddf0e397c8a"
+    },
+    {
+      "path": "source/static/images/Imagewait.png",
+      "bytes": 322965,
+      "sha256": "bb8db05a49d7905bcea25011efc44e8c29436a3b941718bfe26b350e45263d3b"
+    },
+    {
+      "path": "source/static/images/Nita Shah.jpg",
+      "bytes": 8414,
+      "sha256": "c84ec17d1faa5f782113c42b674be05abb5081a8780b555096206ed927f01ca5"
+    },
+    {
+      "path": "source/static/images/Shubham.jpg",
+      "bytes": 7791,
+      "sha256": "66444eab35797a044905397cff9d34037a976ce68d325424db545835274182ec"
+    },
+    {
+      "path": "source/static/images/Sush.jpg",
+      "bytes": 6136,
+      "sha256": "da4908fba1300e490680e4462c08dfbadb2273ae665811631ace593e3cc21a07"
+    },
+    {
+      "path": "source/static/images/admins.png",
+      "bytes": 199556,
+      "sha256": "00bd0202cc16cce0b695f31b1d3e5d63c88f49fee9e8426e01064369116ec9a7"
+    },
+    {
+      "path": "source/static/images/currentdata.png",
+      "bytes": 117203,
+      "sha256": "063ea85a2d9c29a0988302329de476ce0e8357b49f4e5af31c92008be718b41b"
+    },
+    {
+      "path": "source/static/images/db.png",
+      "bytes": 48743,
+      "sha256": "37678ac0a72f5475b505f6ba37479ba3999bdd7a0cf198fb2bc100cb9ca53b16"
+    },
+    {
+      "path": "source/static/images/grantp.png",
+      "bytes": 330848,
+      "sha256": "d7febe1ee89e6de76d6aea52be58fae65dcb35b25bbde39d4fe1cf0bc3c2a8fd"
+    },
+    {
+      "path": "source/static/images/lf.png",
+      "bytes": 396297,
+      "sha256": "0372f49478c6a1d4702dca4e03b75cee25d13addc8fb910d4c30491c5bd2e9d9"
+    },
+    {
+      "path": "source/static/images/permissionsoncatalog.png",
+      "bytes": 186142,
+      "sha256": "afc1d47abd61adf0f9ae70210cc300f48db1d0bcf06f2255d7d3c78eaa11298d"
+    },
+    {
+      "path": "source/static/images/proj.png",
+      "bytes": 408818,
+      "sha256": "62e726502d85f509f5db1d4889fbdf62b5949d411cc130d869890c746e7dbd2b"
+    },
+    {
+      "path": "source/static/images/sandhya.jpg",
+      "bytes": 6233,
+      "sha256": "cdddfc2ba1175338fe42e4116063f5fdf16f9130ebd355b3d368ef1f9f98737e"
+    },
+    {
+      "path": "source/static/images/sso.png",
+      "bytes": 79943,
+      "sha256": "4c6bdf1973cbde3ee94e9b80b907db4936268a3b8be871d34a4182b6233a701f"
+    },
+    {
+      "path": "source/static/images/targ.png",
+      "bytes": 446053,
+      "sha256": "49c8a081a4c28b6310201ec82e5247c654998552645fb6542d6716c7ffd4034b"
+    },
+    {
+      "path": "source/static/images/updated.png",
+      "bytes": 217844,
+      "sha256": "e2dcb6718650a28cf0e47f2193426a49ebd05540bde0b435bdcb9488fe9d52e7"
+    },
+    {
+      "path": "source/static/images/ztl_s1lakehouse.png",
+      "bytes": 131190,
+      "sha256": "91ba42b6c227592f3f7c9412bf2c98996ff22f466624afb223be53253885faf0"
+    },
+    {
+      "path": "source/static/images/ztl_s2checks.png",
+      "bytes": 148974,
+      "sha256": "ad6dc07f8a951eeb1323fdfe86f22d2b63ec683f819470e61219319bfcebc39d"
+    },
+    {
+      "path": "source/static/images/ztl_s4.png",
+      "bytes": 129029,
+      "sha256": "ed9260ab70bd84b192b00216f375ff82450f8f907f321456607483d1c519e865"
+    }
+  ]
+}
