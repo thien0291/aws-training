@@ -1,0 +1,7 @@
+# AWS-authored SAA-C03 practice
+
+The [AWS SAA-C03 sample-question PDF](official/AWS-Certified-Solutions-Architect-Associate_Sample-Questions_C03.pdf) is archived here from [AWS's public source](https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Sample-Questions_C03.pdf) (downloaded 2026-09-24). It contains ten AWS-authored sample questions and answers. Question 5 on S3 encryption is closest to this session's security/data theme; questions on VPC, EC2, scaling, and Aurora replicas expose material gaps in the training. The PDF is AWS copyright material and remains AWS's work.
+
+For more AWS-authored practice, open the [official SAA certification page](https://aws.amazon.com/certification/certified-solutions-architect-associate/) and its **Prepare for the exam** section to find the **Official Practice Question Set** in Skill Builder. AWS's [exam-prep page](https://aws.amazon.com/certification/certification-prep/) describes the free 20-question sets and the subscription full-length Official Practice Exam.
+
+After taking the official set, classify misses against the [SAA-C03 guide](https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html). Use [training-extract.md](training-extract.md) only for matching data-platform items. The [local test](practice-test.md) is original and course-focused, not AWS-authored.
